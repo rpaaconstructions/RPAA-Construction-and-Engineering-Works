@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | RPAA Construction and Engineering Works</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #FFB400;
+            --dark: #121212;
+            --light: #F4F4F4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        /* NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.4rem;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+
+        /* HERO */
+        .projects-hero {
+            background:
+                linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+                url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1600');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .projects-hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.4rem;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            display: block;
+            margin: 15px auto 0;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            border-bottom: 4px solid transparent;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            transform: translateY(-8px);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 15px;
+            background: var(--primary);
+            color: var(--dark);
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 8%;
+            text-align: center;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+
+            .nav-links li {
+                margin: 20px 0;
+            }
+
+            .projects-hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .section {
+                padding: 70px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="logo">RPAA <span>Construction and Engineering Works</span></div>
+    <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="services.html">SERVICES</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="projects-hero">
+    <h1>Our Projects</h1>
+    <p>
+        RPAA Construction and Engineering Works is preparing to deliver
+        high-quality civil engineering projects with a future-ready approach.
+    </p>
+</section>
+
+<!-- COMING SOON -->
+<section class="section">
+    <div class="section-title">
+        <h2>Projects Coming Soon</h2>
+    </div>
+
+    <div class="content">
+        <p>
+            As a newly established construction and engineering firm,
+            RPAA Construction and Engineering Works is currently in the
+            process of project planning and client engagement.
+            Our completed and ongoing projects will be showcased here
+            as we move forward.
+        </p>
+    </div>
+</section>
+
+<!-- FUTURE PROJECTS -->
+<section class="section" style="background:#fff;">
+    <div class="section-title">
+        <h2>Future Project Focus Areas</h2>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <i class="fas fa-building"></i>
+            <h3>Residential Projects</h3>
+            <p>Independent houses, apartments and residential developments.</p>
+            <span class="badge">Planned</span>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-city"></i>
+            <h3>Commercial Buildings</h3>
+            <p>Office buildings, retail spaces and commercial complexes.</p>
+            <span class="badge">Upcoming</span>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-industry"></i>
+            <h3>Industrial Projects</h3>
+            <p>Factories, warehouses and industrial civil infrastructure.</p>
+            <span class="badge">Future Scope</span>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-road"></i>
+            <h3>Road & Infrastructure</h3>
+            <p>Internal roads, pavements and civil infrastructure works.</p>
+            <span class="badge">Planning Stage</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 RPAA Construction and Engineering Works. All Rights Reserved.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+}
+</script>
+
+</body>
+</html>
