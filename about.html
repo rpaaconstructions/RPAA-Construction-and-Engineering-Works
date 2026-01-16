@@ -200,6 +200,14 @@
             text-align: center;
             transition: transform 0.3s;
         }
+        .team-card img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 25px auto 0;
+            display: block;
+        }
         .team-card:hover {
             transform: translateY(-8px);
         }
@@ -448,31 +456,35 @@
         </p>
     </div>
     <div class="team-grid" style="margin-top: 50px;">
-        <div class="team-card">
-            <div class="info">
-                <h4>Akhirul Islam</h4>
-                <p>Managing Director & Partner</p>
-            </div>
-        </div>
-        <div class="team-card">
-            <div class="info">
-                <h4>Anjagra Iswary</h4>
-                <p>Partner</p>
-            </div>
-        </div>
-        <div class="team-card">
-            <div class="info">
-                <h4>Rakibul Islam</h4>
-                <p>Partner</p>
-            </div>
-        </div>
-        <div class="team-card">
-            <div class="info">
-                <h4>Pronesh Hojai</h4>
-                <p>Partner</p>
-            </div>
+    <div class="team-card">
+        <img src="images/akhirul.jpeg" alt="Akhirul Islam">
+        <div class="info">
+            <h4>Akhirul Islam</h4>
+            <p>Managing Director & Partner</p>
         </div>
     </div>
+    <div class="team-card">
+        <img src="images/anjagra.jpeg" alt="Anjagra Iswary">
+        <div class="info">
+            <h4>Anjagra Iswary</h4>
+            <p>Partner</p>
+        </div>
+    </div>
+    <div class="team-card">
+        <img src="images/rakibul.jpeg" alt="Rakibul Islam">
+        <div class="info">
+            <h4>Rakibul Islam</h4>
+            <p>Partner</p>
+        </div>
+    </div>
+    <div class="team-card">
+        <img src="images/pronesh.jpeg" alt="Pronesh Hojai">
+        <div class="info">
+            <h4>Pronesh Hojai</h4>
+            <p>Partner</p>
+        </div>
+    </div>
+</div>
 </section>
 <!-- TESTIMONIALS -->
 <section class="section">
@@ -537,14 +549,12 @@
 </footer>
 <!-- BACK TO TOP -->
 <div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
-
 <script>
     // Menu Toggle
     function toggleMenu() {
         const nav = document.getElementById('navLinks');
         nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
     }
-
     // Navbar Scroll Effect
     window.addEventListener('scroll', () => {
         const navbar = document.getElementById('navbar');
@@ -554,7 +564,6 @@
             navbar.classList.remove('scrolled');
         }
     });
-
     // Back to Top
     const backToTop = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
