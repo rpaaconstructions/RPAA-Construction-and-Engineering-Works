@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO TITLE -->
+    <title>RPAA Construction and Engineering Works | Building Dreams Into Reality</title>
+    <!-- SEO META -->
+    <meta name="description" content="RPAA Construction and Engineering Works is a professional civil engineering and construction company delivering modern, reliable, and high-quality solutions. Experience our construction excellence." />
+    <meta name="keywords" content="RPAA Construction, RPAA Construction and Engineering Works, civil engineering company, construction company, engineering works, building construction, industrial projects" />
+    <meta name="author" content="RPAA Construction and Engineering Works" />
+    <!-- SOCIAL PREVIEW -->
+    <meta property="og:title" content="RPAA Construction and Engineering Works" />
+    <meta property="og:description" content="Building the future with modern civil engineering and construction solutions." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rpaaconstructions.github.io/RPAA-Construction-and-Engineering-Works/" />
+    <meta property="og:image" content="https://rpaaconstructions.github.io/RPAA-Construction-and-Engineering-Works/images/logo.jpeg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FFB400;
+            --secondary: #1E88E5;
+            --dark: #121212;
+            --light: #F4F4F4;
+            --accent: #FF6B00;
+            --text: #333333;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        /* NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 6%;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: background 0.3s;
+        }
+        nav.scrolled {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .logo img {
+            height: 72px;
+            width: 72px;
+            object-fit: cover;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid var(--primary);
+        }
+        .logo span {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--primary);
+            white-space: nowrap;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .nav-links li {
+            margin-left: 30px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        /* HERO */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("images/akhirul.png");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            opacity: .9;
+        }
+        .btn {
+            padding: 15px 40px;
+            background: var(--primary);
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #fff;
+            color: var(--dark);
+        }
+        /* STATS */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 8%;
+            background: var(--dark);
+            color: white;
+            text-align: center;
+        }
+        .stat-item h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        /* SECTION PADDING */
+        .section-padding {
+            padding: 100px 8%;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+        }
+        .section-title h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            display: block;
+            margin: 15px auto 0;
+        }
+        /* SERVICES GRID */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-bottom: 4px solid transparent;
+            transition: .3s;
+            text-align: center;
+        }
+        .service-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+        }
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        /* VISION MISSION */
+        .vision-mission {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .vm-card {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            border-radius: 8px;
+        }
+        .vm-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        /* WHY CHOOSE US */
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .why-card {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            text-align: center;
+            border-bottom: 4px solid transparent;
+            transition: .3s;
+        }
+        .why-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+        }
+        .why-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        /* PROJECTS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .project-card {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+        .project-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .badge {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 15px;
+            background: var(--primary);
+            color: var(--dark);
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+        /* WORKING PROCEDURES */
+        .procedures {
+            max-width: 1000px;
+            margin: auto;
+        }
+        .step {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary);
+        }
+        .step h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        /* TESTIMONIALS */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            position: relative;
+        }
+        .testimonial-card::before {
+            content: '\f10d';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 2rem;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .testimonial-card .author {
+            text-align: right;
+            font-weight: 600;
+        }
+        /* CONTACT */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .contact-card {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+        }
+        .contact-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .contact-card a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 8%;
+            text-align: center;
+        }
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+            .nav-links li { margin: 20px 0; }
+            .stats { flex-direction: column; gap: 30px; }
+            .hero { height: auto; padding: 120px 20px; }
+            .hero-content h1 { font-size: 2.2rem; }
+            nav { flex-wrap: wrap; padding: 12px 4%; }
+            .logo { flex: 1; gap: 8px; max-width: 70%; }
+            .logo img { height: 50px; width: 50px; }
+            .logo span { font-size: 1.1rem; white-space: normal; }
+            .menu-toggle { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAV -->
+    <nav id="navbar">
+        <div class="logo">
+            <img src="images/logo.jpeg" alt="RPAA Construction and Engineering Works Logo">
+            <span>RPAA Construction & Engineering Works</span>
+        </div>
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Building Dreams Into Reality</h1>
+            <p>RPAA Construction and Engineering Works delivers modern civil engineering and construction solutions with excellence and reliability.</p>
+            <img src="images/company-home.png" alt="Our Office Front Photo">
+        </div>
+    </header>
+    <!-- STATS -->
+    <div class="stats">
+        <div class="stat-item">
+            <h2><i class="fas fa-users"></i></h2>
+            <p>Expert Engineering Team</p>
+        </div>
+        <div class="stat-item">
+            <h2><i class="fas fa-hard-hat"></i></h2>
+            <p>Modern Construction Approach</p>
+        </div>
+        <div class="stat-item">
+            <h2><i class="fas fa-globe"></i></h2>
+            <p>Global Engineering Vision</p>
+        </div>
+    </div>
+    <!-- ABOUT -->
+    <section class="section-padding" id="about">
+        <div class="section-title">
+            <h2>Who We Are</h2>
+        </div>
+        <div class="content" style="max-width: 900px; margin: auto; text-align: center;">
+            <p>RPAA Construction and Engineering Works is a dynamic partnership firm specializing in construction and civil engineering, founded in India with an ambitious international outlook. As a professionally run partnership, we are committed to providing dependable, secure, and cutting-edge construction services. Though recently founded, we draw on the expertise of our talented engineers, robust management, and unwavering dedication to excellence and openness.</p>
+        </div>
+    </section>
+    <!-- VISION & MISSION -->
+    <section class="section-padding" style="background: #fff;">
+        <div class="section-title">
+            <h2>Our Vision & Mission</h2>
+        </div>
+        <div class="vision-mission">
+            <div class="vm-card">
+                <h3>Our Vision</h3>
+                <p>To emerge as a worldwide leader in construction and engineering, offering eco-friendly, creative, and superior infrastructure projects.</p>
+            </div>
+            <div class="vm-card">
+                <h3>Our Mission</h3>
+                <p>To deliver top-tier civil engineering and construction solutions, emphasizing premium resources, rigorous safety protocols, advanced tools, and punctual completion.</p>
+            </div>
+            <div class="vm-card">
+                <h3>Our Values</h3>
+                <p>Integrity, Innovation, Customer Satisfaction, and Sustainability.</p>
+            </div>
+        </div>
+    </section>
+    <!-- SERVICES -->
+    <section class="section-padding">
+        <div class="section-title">
+            <h2>Our Services</h2>
+        </div>
+        <p style="text-align: center; max-width: 800px; margin: auto auto 40px;">Delivering innovative solutions and exceptional expertise across diverse domains in civil engineering and construction.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-layer-group"></i>
+                <h3>Foundation & Earthwork</h3>
+                <p>All types of foundation works, excavation, backfilling and site development.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-building"></i>
+                <h3>RCC Structure Works</h3>
+                <p>Reinforced cement concrete works for residential, commercial and industrial buildings.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-road"></i>
+                <h3>Road & Pavement Works</h3>
+                <p>Internal roads, pavements, driveways and related civil infrastructure works.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-water"></i>
+                <h3>Drainage & Sewage Systems</h3>
+                <p>Storm water drainage, sewage lines and water management civil works.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-industry"></i>
+                <h3>Industrial Civil Works</h3>
+                <p>Factory buildings, warehouses, industrial sheds and related civil structures.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-tools"></i>
+                <h3>Renovation & Maintenance</h3>
+                <p>Civil renovation, repair, strengthening and maintenance of existing structures.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-drafting-compass"></i>
+                <h3>Project Management & Supervision</h3>
+                <p>Planning, supervision, quality control and coordination for civil projects.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-clipboard-check"></i>
+                <h3>Construction Consultancy</h3>
+                <p>Technical consultation, estimation, material planning and execution guidance.</p>
+            </div>
+        </div>
+    </section>
+    <!-- WHY CHOOSE US -->
+    <section class="section-padding" style="background: #fff;">
+        <div class="section-title">
+            <h2>How We Are Different</h2>
+        </div>
+        <p style="text-align: center; max-width: 800px; margin: auto auto 40px;">Discover what sets RPAA Construction and Engineering Works apart and makes us stand out from the crowd.</p>
+        <div class="why-choose-grid">
+            <div class="why-card">
+                <i class="fas fa-users"></i>
+                <h3>Customer-Centric Approach</h3>
+                <p>We prioritize our customers by offering tailored solutions that cater to their unique needs.</p>
+            </div>
+            <div class="why-card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Innovative Solutions</h3>
+                <p>We leverage cutting-edge technology to deliver creative and efficient outcomes.</p>
+            </div>
+            <div class="why-card">
+                <i class="fas fa-user-tie"></i>
+                <h3>Experienced Team</h3>
+                <p>Our highly skilled team brings expertise and dedication to every project we undertake.</p>
+            </div>
+            <div class="why-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Sustainable & Cost Effective</h3>
+                <p>We focus on sustainability to ensure our solutions benefit both people and the planet.</p>
+            </div>
+            <div class="why-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Safety Priority</h3>
+                <p>Ensuring protection at every stage of the project.</p>
+            </div>
+            <div class="why-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Fair and Clear Costs</h3>
+                <p>Transparent pricing with no surprises.</p>
+            </div>
+        </div>
+    </section>
+    <!-- PROJECTS -->
+    <section class="section-padding">
+        <div class="section-title">
+            <h2>Our Work in Action</h2>
+        </div>
+        <p style="text-align: center; max-width: 800px; margin: auto auto 40px;">View our latest construction highlights and future project focus areas.</p>
+        <div class="projects-grid">
+            <div class="project-card">
+                <i class="fas fa-building"></i>
+                <h3>Residential Projects</h3>
+                <p>Independent houses, apartments and residential developments.</p>
+                <span class="badge">Planned</span>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-city"></i>
+                <h3>Commercial Buildings</h3>
+                <p>Office buildings, retail spaces and commercial complexes.</p>
+                <span class="badge">Upcoming</span>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-industry"></i>
+                <h3>Industrial Projects</h3>
+                <p>Factories, warehouses and industrial civil infrastructure.</p>
+                <span class="badge">Future Scope</span>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-road"></i>
+                <h3>Road & Infrastructure</h3>
+                <p>Internal roads, pavements and civil infrastructure works.</p>
+                <span class="badge">Planning Stage</span>
+            </div>
+        </div>
+    </section>
+    <!-- WORKING PROCEDURES -->
+    <section class="section-padding" style="background: #fff;">
+        <div class="section-title">
+            <h2>Our Working Procedures</h2>
+        </div>
+        <div class="procedures">
+            <div class="step">
+                <h3>Step 1: Consulting</h3>
+                <p>Initial consultation to understand client needs and project requirements.</p>
+            </div>
+            <div class="step">
+                <h3>Step 2: Project Discussion</h3>
+                <p>Detailed discussion on project scope, timeline, and budget.</p>
+            </div>
+            <div class="step">
+                <h3>Step 3: Permission & Drawing</h3>
+                <p>Obtaining necessary permissions and preparing detailed drawings.</p>
+            </div>
+            <div class="step">
+                <h3>Step 4: Finalize Design & Agreement</h3>
+                <p>Finalizing designs and signing agreements.</p>
+            </div>
+            <div class="step">
+                <h3>Step 5: Start Construction</h3>
+                <p>Commencing construction with supervision and quality control.</p>
+            </div>
+        </div>
+    </section>
+    <!-- TESTIMONIALS -->
+    <section class="section-padding">
+        <div class="section-title">
+            <h2>What Our Clients Say</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p>"RPAA Construction and Engineering Works completed our project efficiently with outstanding craftsmanship. Their staff maintained professionalism and clarity from start to finish."</p>
+                <div class="author">- John Doe, Client</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"Their creative approaches and emphasis on safety made collaborating with RPAA a rewarding journey."</p>
+                <div class="author">- Jane Smith, Partner Company</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"RPAA's dedication to eco-friendliness and innovative technology distinguishes them in the field."</p>
+                <div class="author">- Alex Johnson, Investor</div>
+            </div>
+        </div>
+    </section>
+    <!-- CONTACT -->
+    <section class="section-padding" style="background: #fff;">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+        </div>
+        <div class="contact-info">
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>South Salmara, South Salmara Mankachar, Assam – 783127, India</p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <p><a href="mailto:info@rpaaconstruction.com">info@rpaaconstruction.com</a></p>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-whatsapp"></i>
+                <p><a href="https://wa.me/919864942445" target="_blank">+91 98649 42445</a></p>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 RPAA Construction and Engineering Works. All Rights Reserved.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+        }
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

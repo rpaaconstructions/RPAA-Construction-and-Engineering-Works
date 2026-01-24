@@ -2,580 +2,131 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | RPAA Construction and Engineering Works</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>RPAA Construction & Engineering Works</title>
+
     <style>
-        :root {
-            --primary: #FFB400;
-            --secondary: #1E88E5;
-            --dark: #121212;
-            --light: #F4F4F4;
-            --accent: #FF6B00;
-            --text: #333333;
-        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
         }
-        body {
-            background: var(--light);
-            color: var(--text);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-        /* NAV */
-        nav {
+
+        /* NAVBAR */
+        header {
+            width: 100%;
+            background: #ffffff;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: background 0.3s;
+            padding: 15px 40px;
         }
-        nav.scrolled {
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-        }
+
         .logo {
-            font-weight: 800;
-            font-size: 1.6rem;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffb300;
         }
-        .logo span {
-            color: var(--primary);
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-        .nav-links li {
-            margin-left: 35px;
-        }
-        .nav-links a {
+
+        nav a {
+            margin-left: 20px;
             text-decoration: none;
-            color: var(--text);
-            font-weight: 600;
-            font-size: 0.95rem;
-            position: relative;
-            transition: color 0.3s;
+            color: #000;
+            font-weight: 500;
         }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s;
+
+        nav a:hover {
+            color: #ffb300;
         }
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        .menu-toggle {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: var(--text);
-        }
-        /* HERO */
-        .about-hero {
+
+        /* HERO SECTION */
+        .hero {
+            height: 90vh;
             background:
-                linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1600');
+                linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url("images/company-home.png");
             background-size: cover;
             background-position: center;
-            padding: 150px 20px;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        .about-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, var(--dark));
-            opacity: 0.2;
-        }
-        .about-hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-            animation: fadeInDown 1s ease-out;
-        }
-        .about-hero p {
-            max-width: 900px;
-            margin: auto;
-            font-size: 1.2rem;
-            opacity: 0.95;
-            animation: fadeInUp 1s ease-out 0.3s;
-            animation-fill-mode: both;
-        }
-        /* SECTIONS */
-        .section {
-            padding: 100px 8%;
-            position: relative;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .section-title h2 {
-            font-size: 2.8rem;
-            position: relative;
-            color: var(--dark);
-        }
-        .section-title h2::after {
-            content: '';
-            width: 80px;
-            height: 4px;
-            background: var(--primary);
-            display: block;
-            margin: 20px auto 0;
-            border-radius: 2px;
-        }
-        .content {
-            max-width: 1100px;
-            margin: auto;
-            text-align: center;
-            font-size: 1.1rem;
-        }
-        /* GRID */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
-        }
-        .card {
-            background: white;
-            padding: 40px 30px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-            border-radius: 12px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        }
-        .card i {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-            transition: color 0.3s;
-        }
-        .card:hover i {
-            color: var(--accent);
-        }
-        .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-        }
-        /* TEAM SECTION */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        .team-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .team-card img {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin: 25px auto 0;
-            display: block;
-        }
-        .team-card:hover {
-            transform: translateY(-8px);
-        }
-        .team-card .info {
-            padding: 25px;
-        }
-        .team-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-        }
-        .team-card p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-        /* TESTIMONIALS */
-        .testimonials {
             display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
             justify-content: center;
-        }
-        .testimonial-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-            max-width: 400px;
-            position: relative;
-        }
-        .testimonial-card::before {
-            content: '\f10d';
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            font-size: 2rem;
-            color: var(--primary);
-            opacity: 0.2;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-        }
-        .testimonial-card p {
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-        .testimonial-card .author {
-            text-align: right;
-            font-weight: 600;
-        }
-        /* FOOTER */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 60px 8% 40px;
-            text-align: center;
-        }
-        .footer-content {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-        .footer-section {
-            margin: 20px;
-        }
-        .footer-section h4 {
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-        .footer-section ul {
-            list-style: none;
-        }
-        .footer-section li {
-            margin: 10px 0;
-        }
-        .footer-section a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .footer-section a:hover {
-            color: var(--primary);
-        }
-        .social-icons a {
-            font-size: 1.5rem;
-            margin: 0 10px;
-            color: white;
-            transition: color 0.3s;
-        }
-        .social-icons a:hover {
-            color: var(--primary);
-        }
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
-            font-size: 0.9rem;
-        }
-        /* BACK TO TOP */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--primary);
-            color: white;
-            width: 45px;
-            height: 45px;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.3s, transform 0.3s;
-            z-index: 1000;
+            text-align: center;
         }
-        .back-to-top.show {
-            opacity: 1;
-            transform: translateY(0);
+
+        .hero-content {
+            color: #ffffff;
+            max-width: 850px;
+            padding: 20px;
         }
-        .back-to-top:hover {
-            background: var(--accent);
-            transform: translateY(-5px);
+
+        .hero-content h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
         }
-        /* ANIMATIONS */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        .hero-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
         }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #ffb300;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
         }
+
+        .btn:hover {
+            background: #e6a100;
+        }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            .nav-links {
-                position: absolute;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: white;
+            header {
                 flex-direction: column;
-                align-items: center;
-                display: none;
-                padding: 20px 0;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             }
-            .nav-links li {
-                margin: 15px 0;
+
+            nav {
+                margin-top: 10px;
             }
-            .about-hero h1 {
-                font-size: 2.8rem;
-            }
-            .about-hero p {
-                font-size: 1rem;
-            }
-            .section {
-                padding: 80px 5%;
-            }
-            .grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-content {
-                flex-direction: column;
+
+            .hero-content h1 {
+                font-size: 36px;
             }
         }
     </style>
 </head>
+
 <body>
-<!-- NAV -->
-<nav id="navbar">
-    <div class="logo">RPAA <span>Construction and Engineering Works</span></div>
-    <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="services.html">SERVICES</a></li>
-        <li><a href="projects.html">PROJECTS</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-    </ul>
-</nav>
-<!-- HERO -->
-<section class="about-hero">
-    <h1>About RPAA Construction and Engineering Works</h1>
-    <p>
-        RPAA Construction and Engineering Works is a dynamic partnership firm specializing in construction and civil engineering, founded in India with an ambitious international outlook.
-    </p>
-</section>
-<!-- WHO WE ARE -->
-<section class="section">
-    <div class="section-title">
-        <h2>Who We Are</h2>
-    </div>
-    <div class="content">
-        <p>
-            As a professionally run partnership, RPAA Construction and Engineering Works is committed to providing dependable, secure, and cutting-edge construction services. Though recently founded, we draw on the expertise of our talented engineers, robust management, and unwavering dedication to excellence and openness.
-        </p>
-    </div>
-</section>
-<!-- VISION & MISSION -->
-<section class="section" style="background:#fff;">
-    <div class="section-title">
-        <h2>Our Vision & Mission</h2>
-    </div>
-    <div class="grid">
-        <div class="card">
-            <i class="fas fa-globe"></i>
-            <h3>Our Vision</h3>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">RPAA Construction & Engineering Works</div>
+        <nav>
+            <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">PRICING</a>
+            <a href="#">SERVICES</a>
+            <a href="#">PROJECTS</a>
+            <a href="#">CONTACT</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Building Dreams Into Reality</h1>
             <p>
-                To emerge as a worldwide leader in construction and engineering, offering eco-friendly, creative, and superior infrastructure projects.
+                RPAA Construction and Engineering Works delivers modern civil engineering
+                and construction solutions with excellence and reliability.
             </p>
+            <a href="#" class="btn">VIEW OUR PROJECTS</a>
         </div>
-        <div class="card">
-            <i class="fas fa-bullseye"></i>
-            <h3>Our Mission</h3>
-            <p>
-                To deliver top-tier civil engineering and construction solutions, emphasizing premium resources, rigorous safety protocols, advanced tools, and punctual completion.
-            </p>
-        </div>
-    </div>
-</section>
-<!-- WHY CHOOSE US -->
-<section class="section">
-    <div class="section-title">
-        <h2>Why Choose RPAA Construction and Engineering Works</h2>
-    </div>
-    <div class="grid">
-        <div class="card"><i class="fas fa-users"></i><h3>Expert Engineering Staff</h3><p>Seasoned experts focused on superior performance.</p></div>
-        <div class="card"><i class="fas fa-check-circle"></i><h3>Superior Materials</h3><p>Top-quality supplies for enduring structures.</p></div>
-        <div class="card"><i class="fas fa-clock"></i><h3>Prompt Completion</h3><p>Dedicated to adhering to schedules without sacrificing standards.</p></div>
-        <div class="card"><i class="fas fa-shield-alt"></i><h3>Safety Priority</h3><p>Ensuring protection at every stage of the project.</p></div>
-        <div class="card"><i class="fas fa-handshake"></i><h3>Fair and Clear Costs</h3><p>Transparent pricing with no surprises.</p></div>
-        <div class="card"><i class="fas fa-cogs"></i><h3>Advanced Techniques</h3><p>Employing state-of-the-art methods for optimal results.</p></div>
-    </div>
-</section>
-<!-- MANAGEMENT & TEAM -->
-<section class="section" style="background:#fff;">
-    <div class="section-title">
-        <h2>Our Leadership Team</h2>
-    </div>
-    <div class="content">
-        <p>
-            RPAA Construction and Engineering Works operates as a partnership firm under the guidance of a committed executive team, driven by ethical practices, collaboration, and strategic foresight.
-        </p>
-    </div>
-    <div class="team-grid" style="margin-top: 50px;">
-    <div class="team-card">
-        <img src="images/akhirul.jpeg" alt="Akhirul Islam">
-        <div class="info">
-            <h4>Akhirul Islam</h4>
-            <p>Managing Director & Partner</p>
-        </div>
-    </div>
-    <div class="team-card">
-        <img src="images/anjagra.jpeg" alt="Anjagra Iswary">
-        <div class="info">
-            <h4>Anjagra Iswary</h4>
-            <p>Partner</p>
-        </div>
-    </div>
-    <div class="team-card">
-        <img src="images/rakibul.jpeg" alt="Rakibul Islam">
-        <div class="info">
-            <h4>Rakibul Islam</h4>
-            <p>Partner</p>
-        </div>
-    </div>
-    <div class="team-card">
-        <img src="images/pronesh.jpeg" alt="Pronesh Hojai">
-        <div class="info">
-            <h4>Pronesh Hojai</h4>
-            <p>Partner</p>
-        </div>
-    </div>
-</div>
-</section>
-<!-- TESTIMONIALS -->
-<section class="section">
-    <div class="section-title">
-        <h2>What Our Clients Say</h2>
-    </div>
-    <div class="testimonials">
-        <div class="testimonial-card">
-            <p>"RPAA Construction and Engineering Works completed our project efficiently with outstanding craftsmanship. Their staff maintained professionalism and clarity from start to finish."</p>
-            <div class="author">- John Doe, Client</div>
-        </div>
-        <div class="testimonial-card">
-            <p>"Their creative approaches and emphasis on safety made collaborating with RPAA a rewarding journey."</p>
-            <div class="author">- Jane Smith, Partner Company</div>
-        </div>
-        <div class="testimonial-card">
-            <p>"RPAA's dedication to eco-friendliness and innovative technology distinguishes them in the field."</p>
-            <div class="author">- Alex Johnson, Investor</div>
-        </div>
-    </div>
-</section>
-<!-- LANGUAGES -->
-<section class="section" style="background:#fff;">
-    <div class="section-title">
-        <h2>Languages We Work In</h2>
-    </div>
-    <div class="content">
-        <p>
-            English · Hindi · Assamese · Bengali
-        </p>
-    </div>
-</section>
-<!-- FOOTER -->
-<footer>
-    <div class="footer-content">
-        <div class="footer-section">
-            <h4>About RPAA Construction and Engineering Works</h4>
-            <p>Providing cutting-edge construction services with a worldwide perspective.</p>
-        </div>
-        <div class="footer-section">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Connect With Us</h4>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2026 RPAA Construction and Engineering Works. All Rights Reserved.</p>
-    </div>
-</footer>
-<!-- BACK TO TOP -->
-<div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
-<script>
-    // Menu Toggle
-    function toggleMenu() {
-        const nav = document.getElementById('navLinks');
-        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-    }
-    // Navbar Scroll Effect
-    window.addEventListener('scroll', () => {
-        const navbar = document.getElementById('navbar');
-        if (window.scrollY > 100) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-    // Back to Top
-    const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTop.classList.add('show');
-        } else {
-            backToTop.classList.remove('show');
-        }
-    });
-    backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-</script>
+    </section>
+
 </body>
 </html>

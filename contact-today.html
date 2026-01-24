@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Our Expert | RPAA Construction</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #eef3f9, #f8fbff);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* FORM CONTAINER */
+.contact-wrapper{
+    background:#fff;
+    width:100%;
+    max-width:520px;
+    padding:35px 30px;
+    border-radius:14px;
+    box-shadow:0 20px 45px rgba(0,0,0,0.15);
+    position:relative;
+}
+
+/* CLOSE BUTTON */
+.close-btn{
+    position:absolute;
+    top:15px;
+    right:15px;
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    border:2px solid #4caf50;
+    color:#4caf50;
+    font-size:20px;
+    font-weight:bold;
+    text-align:center;
+    line-height:32px;
+    cursor:pointer;
+}
+
+/* HEADING */
+.contact-wrapper h2{
+    color:#0a3d62;
+    margin-bottom:25px;
+}
+
+/* FORM */
+.contact-form label{
+    font-size:14px;
+    font-weight:600;
+    display:block;
+    margin-bottom:6px;
+    color:#333;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+    width:100%;
+    padding:10px 12px;
+    margin-bottom:18px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:14px;
+}
+
+.contact-form textarea{
+    resize:none;
+    height:100px;
+}
+
+/* SUBMIT BUTTON */
+.submit-btn{
+    width:100%;
+    padding:12px;
+    background:#0a3d62;
+    color:#fff;
+    font-size:15px;
+    font-weight:bold;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    background:#062f4f;
+}
+
+/* RESPONSIVE */
+@media(max-width:500px){
+    .contact-wrapper{
+        margin:20px;
+        padding:25px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="contact-wrapper">
+    <div class="close-btn" onclick="window.history.back()">×</div>
+
+    <h2>Contact Our Expert</h2>
+
+    <form class="contact-form">
+        <label>Full Name *</label>
+        <input type="text" placeholder="Enter your full name" required>
+
+        <label>Phone Number *</label>
+        <input type="tel" placeholder="Enter phone number" required>
+
+        <label>Email Address *</label>
+        <input type="email" placeholder="Enter email address" required>
+
+        <label>Service Type</label>
+        <select>
+            <option>Select Service Type</option>
+            <option>Residential Construction</option>
+            <option>Commercial Projects</option>
+            <option>Road & Drainage Work</option>
+            <option>Bridge Construction</option>
+            <option>Interior Work</option>
+            <option>Exterior Work</option>
+            <option>Repair & Renovation</option>
+        </select>
+
+        <label>Sub Service</label>
+        <select>
+            <option>Select Sub Service</option>
+            <option>New Construction</option>
+            <option>Renovation</option>
+            <option>Consultation</option>
+            <option>Site Inspection</option>
+        </select>
+
+        <label>Service Requirement Description *</label>
+        <textarea placeholder="Describe your requirement..." required></textarea>
+
+        <button type="submit" class="submit-btn">Submit Request</button>
+    </form>
+</div>
+
+</body>
+</html>

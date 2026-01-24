@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construction Packages | RPAA Construction</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --primary:#0b4f6c;
+  --secondary:#ffb400;
+  --light:#f5f7fa;
+  --dark:#1a1a1a;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:var(--light);
+  color:#333;
+}
+
+/* HEADER */
+.page-header{
+  background:var(--primary);
+  color:#fff;
+  padding:40px 20px;
+  text-align:center;
+}
+.page-header h1{
+  font-size:2.2rem;
+  margin-bottom:10px;
+}
+.page-header p{
+  opacity:0.9;
+}
+
+/* PRICING TABLE */
+.pricing-section{
+  padding:60px 6%;
+}
+
+.table-wrapper{
+  overflow-x:auto;
+  background:#fff;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:900px;
+}
+
+thead th{
+  background:var(--primary);
+  color:#fff;
+  padding:15px;
+  font-size:1rem;
+}
+
+thead th:first-child{
+  text-align:left;
+}
+
+tbody td, tbody th{
+  border:1px solid #ddd;
+  padding:12px 14px;
+  text-align:center;
+  font-size:0.95rem;
+}
+
+tbody th{
+  text-align:left;
+  background:#f0f4f8;
+  font-weight:600;
+}
+
+.price{
+  font-size:1.1rem;
+  font-weight:bold;
+  color:var(--primary);
+}
+
+.check{
+  color:green;
+  font-size:1.1rem;
+}
+
+/* NOTE */
+.note{
+  margin-top:15px;
+  color:#c0392b;
+  font-size:0.9rem;
+  text-align:center;
+}
+
+/* FOOTER */
+footer{
+  background:#062f40;
+  color:#fff;
+  padding:40px 6%;
+  margin-top:60px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+footer h3{
+  margin-bottom:15px;
+  color:var(--secondary);
+}
+
+footer p, footer a{
+  font-size:0.9rem;
+  color:#ddd;
+  text-decoration:none;
+}
+
+footer a:hover{
+  color:#fff;
+}
+
+.social i{
+  font-size:1.3rem;
+  margin-right:12px;
+  cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="page-header">
+  <h1>Construction Packages</h1>
+  <p>Transparent pricing for quality construction solutions</p>
+</div>
+
+<!-- PRICING -->
+<section class="pricing-section">
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>DELUXE</th>
+          <th>PREMIUM</th>
+          <th>LUXURY</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Price per Sqft</th>
+          <td class="price">₹1550 / Sqft</td>
+          <td class="price">₹1910 / Sqft</td>
+          <td class="price">₹2370 / Sqft</td>
+        </tr>
+
+        <tr>
+          <th>Architectural Services</th>
+          <td><i class="fa fa-check check"></i></td>
+          <td><i class="fa fa-check check"></i></td>
+          <td><i class="fa fa-check check"></i></td>
+        </tr>
+
+        <tr>
+          <th>Govt / Bank Assistance</th>
+          <td>Extra Charge</td>
+          <td>Extra Charge</td>
+          <td><i class="fa fa-check check"></i></td>
+        </tr>
+
+        <tr>
+          <th>Cement</th>
+          <td>Ultratech / Dalmia</td>
+          <td>Ultratech / Dalmia</td>
+          <td>Ultratech / Ambuja</td>
+        </tr>
+
+        <tr>
+          <th>Steel</th>
+          <td>Standard Brand</td>
+          <td>X-Tech / Maithan</td>
+          <td>TATA / JSW</td>
+        </tr>
+
+        <tr>
+          <th>Bricks</th>
+          <td>Red Brick</td>
+          <td>Red Brick</td>
+          <td>Red Brick / AAC Block</td>
+        </tr>
+
+        <tr>
+          <th>Floor Tiles</th>
+          <td>Up to ₹45 / Sqft</td>
+          <td>Up to ₹60 / Sqft</td>
+          <td>Up to ₹110 / Sqft</td>
+        </tr>
+
+        <tr>
+          <th>Painting</th>
+          <td>Standard Emulsion</td>
+          <td>Premium Emulsion</td>
+          <td>Luxury Emulsion</td>
+        </tr>
+
+        <tr>
+          <th>Electrical</th>
+          <td>Basic Wiring</td>
+          <td>Concealed Wiring</td>
+          <td>Premium + Automation</td>
+        </tr>
+
+        <tr>
+          <th>Plumbing</th>
+          <td>Normal Brand</td>
+          <td>Astral / Supreme</td>
+          <td>Astral / Supreme</td>
+        </tr>
+
+        <tr>
+          <th>Warranty</th>
+          <td>5 Years</td>
+          <td>5 Years</td>
+          <td>5 Years</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    * T&C Apply. Rates may vary based on built-up area and number of floors.
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>About RPAA</h3>
+      <p>RPAA Construction & Engineering Works delivers reliable, modern and cost-effective construction solutions across residential, commercial and industrial projects.</p>
+    </div>
+
+    <div>
+      <h3>Services</h3>
+      <p>Residential Construction</p>
+      <p>Commercial Construction</p>
+      <p>Industrial Projects</p>
+      <p>Interior & Exterior Works</p>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <p>South Salmara, Assam – 783127</p>
+      <p>📞 +91 98649 42445</p>
+      <p>✉ info@rpaaconstruction.com</p>
+      <div class="social">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-instagram"></i>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
