@@ -1,298 +1,640 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | RPAA Construction and Engineering Works</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <style>
-        :root {
-            --primary: #FFB400;
-            --dark: #121212;
-            --light: #F4F4F4;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects - RPAA Construction & Engineering Works</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+        background: #fff;
+    }
+    header {
+        background: linear-gradient(to right, #dff6ff, #f0fbff);
+        padding: 12px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: bold;
+        font-size: 18px;
+        color: #7a0000;
+    }
+    .logo img {
+        height: 40px;
+    }
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    nav a {
+        text-decoration: none;
+        padding: 8px 14px;
+        color: #7a0000;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+    nav a:hover {
+        color: #fff;
+        background: linear-gradient(135deg, #8b0000, #c40000);
+    }
+    nav a.active {
+        color: #fff;
+        background: linear-gradient(135deg, #2b0000, #7a0000);
+    }
+    .menu-toggle {
+        display: none;
+        font-size: 28px;
+        color: #7a0000;
+        cursor: pointer;
+    }
+    .hero {
+        width: 100%;
+        height: 100vh;
+        background: url("images/projects/project-banner.png") no-repeat center;
+        background-size: contain;
+        background-color: #f5f5f5;
+    }
+    section {
+        padding: 80px 10%;
+    }
+    h2 {
+        text-align: center;
+        color: #7a0000;
+        margin-bottom: 10px;
+        font-size: 32px;
+    }
+    .section-subtitle {
+        text-align: center;
+        color: #555;
+        margin-bottom: 50px;
+        font-size: 16px;
+    }
+    .projects {
+        background: #f8f8f8;
+    }
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+    .project-card.modern {
+        background: #fff;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+        transition: transform 0.3s ease;
+    }
+    .project-card.modern:hover {
+        transform: translateY(-6px);
+    }
+    .project-card.modern img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+    .project-body {
+        padding: 20px;
+    }
+    .project-body h3 {
+        color: #003366;
+        margin-bottom: 8px;
+    }
+    .project-body p {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.6;
+    }
+    .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+    }
+    .status {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .ongoing {
+        background: #ffe5b4;
+        color: #a05a00;
+    }
+    .completed {
+        background: #d4f5e2;
+        color: #0a6b3c;
+    }
+    .gallery-btn {
+        background: #ff7a00;
+        color: #fff;
+        text-decoration: none;
+        padding: 8px 14px;
+        border-radius: 6px;
+        font-size: 14px;
+        transition: background 0.3s;
+        cursor: pointer;
+    }
+    .gallery-btn:hover {
+        background: #e06600;
+    }
+    .gallery-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.6);
+        z-index: 5000;
+        padding: 40px;
+    }
+    .gallery-content {
+        background: #fff;
+        max-width: 1100px;
+        margin: auto;
+        border-radius: 12px;
+        padding: 25px;
+        position: relative;
+        animation: zoomIn 0.3s ease;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    @keyframes zoomIn {
+        from { transform: scale(0.9); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+    .close-btn {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        font-size: 30px;
+        cursor: pointer;
+        color: #333;
+        z-index: 10;
+    }
+    .close-btn:hover {
+        color: #ff0000;
+    }
+    .gallery-content h2 {
+        margin-bottom: 20px;
+        color: #003366;
+    }
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+    }
+    .gallery-grid img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+    .gallery-grid img:hover {
+        transform: scale(1.05);
+    }
+    .footer-final {
+        background: linear-gradient(135deg, #0f3f4a, #0b5f6f);
+        color: #ffffff;
+        margin-top: 40px;
+    }
+    .footer-about {
+        padding: 45px 10% 30px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-about h3 {
+        font-size: 17.5px;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    .footer-about h3::after {
+        content: "";
+        width: 36px;
+        height: 2px;
+        background: #facc15;
+        display: block;
+        margin-top: 6px;
+    }
+    .footer-about p {
+        max-width: 880px;
+        font-size: 14.5px;
+        line-height: 1.75;
+        color: #e6f2f4;
+    }
+    .footer-columns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 55px;
+        padding: 35px 10% 45px;
+    }
+    .footer-box h4 {
+        font-size: 15.5px;
+        margin-bottom: 12px;
+        font-weight: 600;
+    }
+    .footer-box h4::after {
+        content: "";
+        width: 32px;
+        height: 2px;
+        background: #facc15;
+        display: block;
+        margin-top: 6px;
+    }
+    .footer-box ul {
+        list-style: none;
+        padding: 0;
+    }
+    .footer-box ul li {
+        margin-bottom: 8px;
+    }
+    .footer-box ul li a {
+        color: #fff4a3;
+        font-size: 14.5px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .footer-box ul li a:hover {
+        color: #ffffff;
+        padding-left: 3px;
+    }
+    .footer-box p {
+        font-size: 14.5px;
+        line-height: 1.6;
+        color: #e6f2f4;
+        margin-bottom: 8px;
+    }
+    .footer-social {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .footer-social a {
+        width: 30px;
+        height: 30px;
+        background: #facc15;
+        color: #0f3f4a;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .footer-location {
+        padding: 30px 10% 45px;
+        background: linear-gradient(180deg, #0b1f2a, #020617);
+    }
+    .footer-location h4 {
+        font-size: 15.5px;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    .footer-location iframe {
+        width: 100%;
+        height: 240px;
+        border-radius: 10px;
+        border: none;
+    }
+    .footer-bottom {
+        background: #020617;
+        text-align: center;
+        padding: 12px;
+        color: #cbd5e1;
+        font-size: 13.5px;
+    }
+    @media (max-width: 768px) {
+        header {
+            padding: 12px 20px;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background: var(--light);
-            color: var(--dark);
-            line-height: 1.7;
-        }
-
-        /* NAV */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
         .logo {
-            font-weight: 800;
-            font-size: 1.4rem;
+            font-size: 16px;
         }
-
-        .logo span {
-            color: var(--primary);
+        .logo img {
+            height: 35px;
         }
-
-        .nav-links {
-            list-style: none;
+        nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to right, #dff6ff, #f0fbff);
+            padding: 10px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        nav.active {
             display: flex;
         }
-
-        .nav-links li {
-            margin-left: 30px;
+        nav a {
+            padding: 12px 20px;
+            text-align: center;
+            border-radius: 0;
         }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
         .menu-toggle {
-            display: none;
-            font-size: 1.6rem;
-            cursor: pointer;
-        }
-
-        /* HERO */
-        .projects-hero {
-            background:
-                linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-                url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1600');
-            background-size: cover;
-            background-position: center;
-            padding: 120px 20px;
-            text-align: center;
-            color: white;
-        }
-
-        .projects-hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 15px;
-        }
-
-        /* SECTIONS */
-        .section {
-            padding: 90px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.4rem;
-            position: relative;
-        }
-
-        .section-title h2::after {
-            content: '';
-            width: 60px;
-            height: 4px;
-            background: var(--primary);
             display: block;
-            margin: 15px auto 0;
         }
-
-        .content {
-            max-width: 900px;
-            margin: auto;
+        .hero {
+            height: 60vh;
+        }
+        section {
+            padding: 60px 5%;
+        }
+        h2 {
+            font-size: 28px;
+        }
+        .project-grid {
+            gap: 20px;
+        }
+        .project-card.modern img {
+            height: 180px;
+        }
+        .footer-columns {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            padding: 25px 5% 35px;
+        }
+    }
+    @media (max-width: 550px) {
+        .footer-columns {
+            grid-template-columns: 1fr;
+        }
+        .footer-box {
             text-align: center;
         }
-
-        /* GRID */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+        .footer-social {
+            justify-content: center;
         }
-
-        .card {
-            background: white;
-            padding: 40px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-            border-bottom: 4px solid transparent;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            border-color: var(--primary);
-            transform: translateY(-8px);
-        }
-
-        .card i {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .badge {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 6px 15px;
-            background: var(--primary);
-            color: var(--dark);
-            font-size: 0.75rem;
-            font-weight: bold;
-            border-radius: 20px;
-        }
-
-        /* FOOTER */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 40px 8%;
-            text-align: center;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                position: absolute;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                align-items: center;
-                display: none;
-            }
-
-            .nav-links li {
-                margin: 20px 0;
-            }
-
-            .projects-hero h1 {
-                font-size: 2.3rem;
-            }
-
-            .section {
-                padding: 70px 5%;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
-
 <body>
+<header>
+    <div class="logo">
+        <img src="images/logo-banner.png" alt="RPAA Logo">
+        RPAA Construction & Engineering Works
+    </div>
+    <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="#">Order-Material</a>
+        <a href="pricing.html">₹ Pricing</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+    </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</header>
 
-<!-- NAV -->
-<nav>
-    <div class="logo">RPAA <span>Construction and Engineering Works</span></div>
-    <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="services.html">SERVICES</a></li>
-        <li><a href="projects.html">PROJECTS</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-    </ul>
-</nav>
+<section class="hero"></section>
 
-<!-- HERO -->
-<section class="projects-hero">
-    <h1>Our Projects</h1>
-    <p>
-        RPAA Construction and Engineering Works is preparing to deliver
-        high-quality civil engineering projects with a future-ready approach.
+<section class="projects">
+    <h2>Ongoing & Completed Projects</h2>
+    <p class="section-subtitle">
+        Delivering quality construction with trust and transparency
     </p>
+    <div class="project-grid">
+        <div class="project-card modern">
+            <img src="images/projects/residential.png" alt="Residential Projects">
+            <div class="project-body">
+                <h3>Residential Projects</h3>
+                <p>Luxury homes & residential complexes<br><strong>Location:</strong> Kolkata</p>
+                <div class="card-footer">
+                    <span class="status ongoing">Ongoing</span>
+                    <a href="#" class="gallery-btn" onclick="openGallery('residential'); return false;">Explore Gallery</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card modern">
+            <img src="images/projects/commercial.png" alt="Commercial Projects">
+            <div class="project-body">
+                <h3>Commercial Projects</h3>
+                <p>Shops, offices & business complexes<br><strong>Location:</strong> Howrah</p>
+                <div class="card-footer">
+                    <span class="status completed">Completed</span>
+                    <a href="#" class="gallery-btn" onclick="openGallery('commercial'); return false;">Explore Gallery</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card modern">
+            <img src="images/projects/road-drainage.png" alt="Road & Drainage Projects">
+            <div class="project-body">
+                <h3>Road & Drainage Projects</h3>
+                <p>Road construction & drainage systems<br><strong>Location:</strong> Hooghly</p>
+                <div class="card-footer">
+                    <span class="status ongoing">Ongoing</span>
+                    <a href="#" class="gallery-btn" onclick="openGallery('road'); return false;">Explore Gallery</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card modern">
+            <img src="images/projects/warehouse.png" alt="Industrial Projects">
+            <div class="project-body">
+                <h3>Industrial Projects</h3>
+                <p>Warehouses & industrial structures<br><strong>Location:</strong> Durgapur</p>
+                <div class="card-footer">
+                    <span class="status completed">Completed</span>
+                    <a href="#" class="gallery-btn" onclick="openGallery('industrial'); return false;">Explore Gallery</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card modern">
+            <img src="images/projects/testing-services.png" alt="Testing Services">
+            <div class="project-body">
+                <h3>Testing Services</h3>
+                <p>Material testing & quality inspection<br><strong>Location:</strong> Multiple Sites</p>
+                <div class="card-footer">
+                    <span class="status ongoing">Ongoing</span>
+                    <a href="#" class="gallery-btn" onclick="openGallery('testing'); return false;">Explore Gallery</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card modern">
+            <img src="images/projects/exterior-work.png" alt="Exterior Work">
+            <div class="project-body">
+                <h3>Exterior Work</h3>
+                <p>Facade, painting & outdoor finishing<br><strong>Location:</strong> Kolkata</p>
+                <div class="card-footer">
+                    <span class="status completed">Completed</span>
+                    <a href="#" class="gallery-btn" onclick="openGallery('exterior'); return false;">Explore Gallery</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card modern">
+            <img src="images/projects/interior-work.png" alt="Interior Work">
+            <div class="project-body">
+                <h3>Interior Work</h3>
+                <p>Modern interiors & space planning<br><strong>Location:</strong> Howrah</p>
+                <div class="card-footer">
+                    <span class="status ongoing">Ongoing</span>
+                    <a href="#" class="gallery-btn" onclick="openGallery('interior'); return false;">Explore Gallery</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card modern">
+            <img src="images/projects/bridge.png" alt="Bridge Construction">
+            <div class="project-body">
+                <h3>Bridge Construction</h3>
+                <p>Small & medium span bridge works<br><strong>Location:</strong> West Bengal</p>
+                <div class="card-footer">
+                    <span class="status ongoing">Ongoing</span>
+                    <a href="#" class="gallery-btn" onclick="openGallery('bridge'); return false;">Explore Gallery</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card modern">
+            <img src="images/projects/water-supply.png" alt="Water Supply Projects">
+            <div class="project-body">
+                <h3>Water Supply Projects</h3>
+                <p>Pipelines, tanks & water systems<br><strong>Location:</strong> Rural Areas</p>
+                <div class="card-footer">
+                    <span class="status completed">Completed</span>
+                    <a href="#" class="gallery-btn" onclick="openGallery('water'); return false;">Explore Gallery</a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card modern">
+            <img src="images/projects/repair-renovation.png" alt="Repair & Renovation">
+            <div class="project-body">
+                <h3>Repair & Renovation</h3>
+                <p>Structural repair & upgrading work<br><strong>Location:</strong> Kolkata</p>
+                <div class="card-footer">
+                    <span class="status completed">Completed</span>
+                    <a href="#" class="gallery-btn" onclick="openGallery('repair'); return false;">Explore Gallery</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- COMING SOON -->
-<section class="section">
-    <div class="section-title">
-        <h2>Projects Coming Soon</h2>
+<div id="galleryModal" class="gallery-modal">
+    <div class="gallery-content">
+        <span class="close-btn" onclick="closeGallery()">&times;</span>
+        <h2 id="galleryTitle">Project Gallery</h2>
+        <div class="gallery-grid" id="galleryImages"></div>
     </div>
+</div>
 
-    <div class="content">
+<footer class="footer-final">
+    <div class="footer-about">
+        <h3>ABOUT US</h3>
         <p>
-            As a newly established construction and engineering firm,
-            RPAA Construction and Engineering Works is currently in the
-            process of project planning and client engagement.
-            Our completed and ongoing projects will be showcased here
-            as we move forward.
+            RPAA Construction and Engineering Works is a trusted construction
+            company delivering quality construction, innovative engineering
+            solutions, and reliable renovation services. Our expertise spans
+            residential, commercial, and industrial projects with a strong
+            commitment to safety, durability, and timely delivery.
         </p>
     </div>
-</section>
-
-<!-- FUTURE PROJECTS -->
-<section class="section" style="background:#fff;">
-    <div class="section-title">
-        <h2>Future Project Focus Areas</h2>
+    <div class="footer-columns">
+        <div class="footer-box">
+            <h4>QUICK LINKS</h4>
+            <ul>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Order-Material</a></li>
+            </ul>
+        </div>
+        <div class="footer-box">
+            <h4>OUR SERVICES</h4>
+            <ul>
+                <li><a href="#">Residential Construction</a></li>
+                <li><a href="#">Commercial Construction</a></li>
+                <li><a href="#">Industrial Construction</a></li>
+                <li><a href="#">Interior & Exterior Work</a></li>
+                <li><a href="#">Testing Services</a></li>
+            </ul>
+        </div>
+        <div class="footer-box">
+            <h4>CONTACT INFO</h4>
+            <p>
+                📍 South Salmara,<br>
+                South Salmara Mankachar,<br>
+                Assam – 783127, India
+            </p>
+            <p>📞 +91 98649 42445</p>
+            <p>✉️ info@rpaaconstruction.com</p>
+            <div class="footer-social">
+                <a href="#">F</a>
+                <a href="#">X</a>
+                <a href="#">in</a>
+                <a href="#">IG</a>
+            </div>
+        </div>
     </div>
-
-    <div class="grid">
-
-        <div class="card">
-            <i class="fas fa-building"></i>
-            <h3>Residential Projects</h3>
-            <p>Independent houses, apartments and residential developments.</p>
-            <span class="badge">Planned</span>
-        </div>
-
-        <div class="card">
-            <i class="fas fa-city"></i>
-            <h3>Commercial Buildings</h3>
-            <p>Office buildings, retail spaces and commercial complexes.</p>
-            <span class="badge">Upcoming</span>
-        </div>
-
-        <div class="card">
-            <i class="fas fa-industry"></i>
-            <h3>Industrial Projects</h3>
-            <p>Factories, warehouses and industrial civil infrastructure.</p>
-            <span class="badge">Future Scope</span>
-        </div>
-
-        <div class="card">
-            <i class="fas fa-road"></i>
-            <h3>Road & Infrastructure</h3>
-            <p>Internal roads, pavements and civil infrastructure works.</p>
-            <span class="badge">Planning Stage</span>
-        </div>
-
+    <div class="footer-location">
+        <h4>OUR LOCATION</h4>
+        <iframe
+            src="https://www.google.com/maps?q=South+Salmara+Assam&output=embed"
+            loading="lazy"
+            allowfullscreen>
+        </iframe>
     </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <p>&copy; 2026 RPAA Construction and Engineering Works. All Rights Reserved.</p>
+    <div class="footer-bottom">
+        © 2025 RPAA Construction and Engineering Works. All rights reserved.
+    </div>
 </footer>
 
 <script>
+const galleries = {
+    residential: ["images/gallery/residential/1.jpg", "images/gallery/residential/2.png", "images/gallery/residential/3.jpg"],
+    commercial: ["images/gallery/commercial/1.jpg", "images/gallery/commercial/2.jpg", "images/gallery/commercial/3.jpg", "images/gallery/commercial/4.jpg"],
+    road: ["images/gallery/road/1.jpg", "images/gallery/road/2.jpg"],
+    industrial: ["images/gallery/industrial/1.jpg", "images/gallery/industrial/2.jpg"],
+    testing: ["images/gallery/testing/1.jpg"],
+    exterior: ["images/gallery/exterior/1.jpg", "images/gallery/exterior/2.jpg"],
+    interior: ["images/gallery/interior/1.jpg", "images/gallery/interior/2.jpg"],
+    bridge: ["images/gallery/bridge/1.jpg", "images/gallery/bridge/2.jpg"],
+    water: ["images/gallery/water/1.jpg"],
+    repair: ["images/gallery/repair/1.jpg"]
+};
+function openGallery(type) {
+    const modal = document.getElementById("galleryModal");
+    const container = document.getElementById("galleryImages");
+    const title = document.getElementById("galleryTitle");
+    container.innerHTML = "";
+    title.innerText = type.charAt(0).toUpperCase() + type.slice(1) + " Projects";
+    galleries[type].forEach(img => {
+        const image = document.createElement("img");
+        image.src = img;
+        image.alt = type + " project image";
+        container.appendChild(image);
+    });
+    modal.style.display = "block";
+}
+function closeGallery() {
+    document.getElementById("galleryModal").style.display = "none";
+}
+window.onclick = function(event) {
+    const modal = document.getElementById("galleryModal");
+    if (event.target == modal) {
+        closeGallery();
+    }
+}
 function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    const nav = document.getElementById("nav-menu");
+    nav.classList.toggle("active");
 }
 </script>
-
 </body>
 </html>
