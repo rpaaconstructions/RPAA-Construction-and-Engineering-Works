@@ -3,276 +3,570 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Construction Packages | RPAA Construction</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<title>Pricing - RPAA Construction & Engineering Works</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
-:root{
-  --primary:#0b4f6c;
-  --secondary:#ffb400;
-  --light:#f5f7fa;
-  --dark:#1a1a1a;
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-  background:var(--light);
-  color:#333;
-}
-
-/* HEADER */
-.page-header{
-  background:var(--primary);
-  color:#fff;
-  padding:40px 20px;
-  text-align:center;
-}
-.page-header h1{
-  font-size:2.2rem;
-  margin-bottom:10px;
-}
-.page-header p{
-  opacity:0.9;
-}
-
-/* PRICING TABLE */
-.pricing-section{
-  padding:60px 6%;
-}
-
-.table-wrapper{
-  overflow-x:auto;
-  background:#fff;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-table{
-  width:100%;
-  border-collapse:collapse;
-  min-width:900px;
-}
-
-thead th{
-  background:var(--primary);
-  color:#fff;
-  padding:15px;
-  font-size:1rem;
-}
-
-thead th:first-child{
-  text-align:left;
-}
-
-tbody td, tbody th{
-  border:1px solid #ddd;
-  padding:12px 14px;
-  text-align:center;
-  font-size:0.95rem;
-}
-
-tbody th{
-  text-align:left;
-  background:#f0f4f8;
-  font-weight:600;
-}
-
-.price{
-  font-size:1.1rem;
-  font-weight:bold;
-  color:var(--primary);
-}
-
-.check{
-  color:green;
-  font-size:1.1rem;
-}
-
-/* NOTE */
-.note{
-  margin-top:15px;
-  color:#c0392b;
-  font-size:0.9rem;
-  text-align:center;
-}
-
-/* FOOTER */
-footer{
-  background:#062f40;
-  color:#fff;
-  padding:40px 6%;
-  margin-top:60px;
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-}
-
-footer h3{
-  margin-bottom:15px;
-  color:var(--secondary);
-}
-
-footer p, footer a{
-  font-size:0.9rem;
-  color:#ddd;
-  text-decoration:none;
-}
-
-footer a:hover{
-  color:#fff;
-}
-
-.social i{
-  font-size:1.3rem;
-  margin-right:12px;
-  cursor:pointer;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+        background: #fff;
+    }
+    /* ================= NAVBAR ================= */
+    header {
+        background: linear-gradient(to right, #dff6ff, #f0fbff);
+        padding: 12px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: bold;
+        font-size: 18px;
+        color: #7a0000;
+    }
+    .logo img {
+        height: 40px;
+    }
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    nav a {
+        text-decoration: none;
+        padding: 8px 14px;
+        color: #7a0000;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+    nav a:hover {
+        color: #fff;
+        background: linear-gradient(135deg, #8b0000, #c40000);
+    }
+    nav a.active {
+        color: #fff;
+        background: linear-gradient(135deg, #2b0000, #7a0000);
+    }
+    /* Mobile Menu Styles */
+    .menu-toggle {
+        display: none;
+        font-size: 28px;
+        color: #7a0000;
+        cursor: pointer;
+    }
+    /* ================= HERO ================= */
+    .hero {
+        width: 100%;
+        height: 100vh;
+        background: url("images/pricing/pricing.png") no-repeat center;
+        background-size: contain;
+        background-color: #f5f5f5;
+    }
+    /* ================= PAGE HEADER ================= */
+    .page-header {
+        text-align: center;
+        padding: 60px 10% 40px;
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    }
+    .page-header h1 {
+        font-size: 42px;
+        color: #7a0000;
+        margin-bottom: 12px;
+        font-weight: 800;
+    }
+    .page-header p {
+        font-size: 18px;
+        color: #555;
+    }
+    /* ================= PRICING SECTION ================= */
+    .pricing-section {
+        padding: 60px 5%;
+        background: #fff;
+    }
+    .table-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        overflow-x: auto;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        border-radius: 12px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        min-width: 650px;
+    }
+    thead {
+        background: linear-gradient(135deg, #7a0000, #a00000);
+        color: #fff;
+    }
+    thead th {
+        padding: 20px 15px;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    thead th:first-child {
+        text-align: left;
+        border-top-left-radius: 12px;
+    }
+    thead th:last-child {
+        border-top-right-radius: 12px;
+    }
+    tbody th {
+        background: #f8f9fa;
+        padding: 18px 20px;
+        font-size: 15px;
+        font-weight: 600;
+        text-align: left;
+        color: #333;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    tbody td {
+        padding: 18px 15px;
+        text-align: center;
+        font-size: 14.5px;
+        color: #555;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    tbody tr:hover {
+        background: #f9f9f9;
+    }
+    .price {
+        font-size: 20px;
+        font-weight: 700;
+        color: #7a0000;
+    }
+    .check {
+        color: #28a745;
+        font-size: 20px;
+    }
+    .note {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 14px;
+        color: #777;
+        font-style: italic;
+    }
+    /* ================= FOOTER ================= */
+    .footer-final {
+        background: linear-gradient(135deg, #0f3f4a, #0b5f6f);
+        color: #ffffff;
+        margin-top: 60px;
+    }
+    .footer-about {
+        padding: 45px 10% 30px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-about h3 {
+        font-size: 17.5px;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    .footer-about h3::after {
+        content: "";
+        width: 36px;
+        height: 2px;
+        background: #facc15;
+        display: block;
+        margin-top: 6px;
+    }
+    .footer-about p {
+        max-width: 880px;
+        font-size: 14.5px;
+        line-height: 1.75;
+        color: #e6f2f4;
+    }
+    .footer-columns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 55px;
+        padding: 35px 10% 45px;
+    }
+    .footer-box h4 {
+        font-size: 15.5px;
+        margin-bottom: 12px;
+        font-weight: 600;
+    }
+    .footer-box h4::after {
+        content: "";
+        width: 32px;
+        height: 2px;
+        background: #facc15;
+        display: block;
+        margin-top: 6px;
+    }
+    .footer-box ul {
+        list-style: none;
+        padding: 0;
+    }
+    .footer-box ul li {
+        margin-bottom: 8px;
+    }
+    .footer-box ul li a {
+        color: #fff4a3;
+        font-size: 14.5px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .footer-box ul li a:hover {
+        color: #ffffff;
+        padding-left: 3px;
+    }
+    .footer-box p {
+        font-size: 14.5px;
+        line-height: 1.6;
+        color: #e6f2f4;
+        margin-bottom: 8px;
+    }
+    .footer-social {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .footer-social a {
+        width: 30px;
+        height: 30px;
+        background: #facc15;
+        color: #0f3f4a;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .footer-location {
+        padding: 30px 10% 45px;
+        background: linear-gradient(180deg, #0b1f2a, #020617);
+    }
+    .footer-location h4 {
+        font-size: 15.5px;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    .footer-location iframe {
+        width: 100%;
+        height: 240px;
+        border-radius: 10px;
+        border: none;
+    }
+    .footer-bottom {
+        background: #020617;
+        text-align: center;
+        padding: 12px;
+        color: #cbd5e1;
+        font-size: 13.5px;
+    }
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+        header {
+            padding: 12px 20px;
+        }
+        .logo {
+            font-size: 16px;
+        }
+        .logo img {
+            height: 35px;
+        }
+        nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to right, #dff6ff, #f0fbff);
+            padding: 10px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        nav.active {
+            display: flex;
+        }
+        nav a {
+            padding: 12px 20px;
+            text-align: center;
+            border-radius: 0;
+        }
+        .menu-toggle {
+            display: block;
+        }
+        .hero {
+            height: 60vh;
+        }
+        .page-header {
+            padding: 40px 5% 30px;
+        }
+        .page-header h1 {
+            font-size: 32px;
+        }
+        .page-header p {
+            font-size: 16px;
+        }
+        .pricing-section {
+            padding: 40px 3%;
+        }
+        .table-wrapper {
+            border-radius: 8px;
+        }
+        table {
+            min-width: 600px;
+        }
+        thead th {
+            padding: 15px 10px;
+            font-size: 15px;
+        }
+        tbody th {
+            padding: 14px 12px;
+            font-size: 14px;
+        }
+        tbody td {
+            padding: 14px 8px;
+            font-size: 13px;
+        }
+        .price {
+            font-size: 17px;
+        }
+        .note {
+            font-size: 12px;
+            margin-top: 20px;
+            padding: 0 10px;
+        }
+        .footer-about {
+            padding: 35px 5% 20px;
+        }
+        .footer-columns {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            padding: 25px 5% 35px;
+        }
+        .footer-location {
+            padding: 20px 5% 35px;
+        }
+        .footer-location iframe {
+            height: 200px;
+        }
+        .footer-bottom {
+            padding: 10px;
+            font-size: 13px;
+        }
+    }
+    @media (max-width: 550px) {
+        .footer-columns {
+            grid-template-columns: 1fr;
+        }
+        .footer-box {
+            text-align: center;
+        }
+        .footer-box ul li a {
+            display: block;
+        }
+        .footer-social {
+            justify-content: center;
+        }
+    }
 </style>
 </head>
 <body>
-
 <!-- HEADER -->
+<header>
+    <div class="logo">
+        <img src="images/logo-banner.png" alt="RPAA Logo">
+        RPAA Construction & Engineering Works
+    </div>
+    <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="order.html">Order-Material</a>
+        <a href="pricing.html" class="active">₹ Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</header>
+
+<!-- HERO -->
+<section class="hero"></section>
+
+<!-- PAGE HEADER -->
 <div class="page-header">
-  <h1>Construction Packages</h1>
-  <p>Transparent pricing for quality construction solutions</p>
+    <h1>Construction Packages</h1>
+    <p>Transparent pricing for quality construction solutions</p>
 </div>
 
-<!-- PRICING -->
+<!-- PRICING TABLE -->
 <section class="pricing-section">
-  <div class="table-wrapper">
-    <table>
-      <thead>
-        <tr>
-          <th>Category</th>
-          <th>DELUXE</th>
-          <th>PREMIUM</th>
-          <th>LUXURY</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>Price per Sqft</th>
-          <td class="price">₹1550 / Sqft</td>
-          <td class="price">₹1910 / Sqft</td>
-          <td class="price">₹2370 / Sqft</td>
-        </tr>
-
-        <tr>
-          <th>Architectural Services</th>
-          <td><i class="fa fa-check check"></i></td>
-          <td><i class="fa fa-check check"></i></td>
-          <td><i class="fa fa-check check"></i></td>
-        </tr>
-
-        <tr>
-          <th>Govt / Bank Assistance</th>
-          <td>Extra Charge</td>
-          <td>Extra Charge</td>
-          <td><i class="fa fa-check check"></i></td>
-        </tr>
-
-        <tr>
-          <th>Cement</th>
-          <td>Ultratech / Dalmia</td>
-          <td>Ultratech / Dalmia</td>
-          <td>Ultratech / Ambuja</td>
-        </tr>
-
-        <tr>
-          <th>Steel</th>
-          <td>Standard Brand</td>
-          <td>X-Tech / Maithan</td>
-          <td>TATA / JSW</td>
-        </tr>
-
-        <tr>
-          <th>Bricks</th>
-          <td>Red Brick</td>
-          <td>Red Brick</td>
-          <td>Red Brick / AAC Block</td>
-        </tr>
-
-        <tr>
-          <th>Floor Tiles</th>
-          <td>Up to ₹45 / Sqft</td>
-          <td>Up to ₹60 / Sqft</td>
-          <td>Up to ₹110 / Sqft</td>
-        </tr>
-
-        <tr>
-          <th>Painting</th>
-          <td>Standard Emulsion</td>
-          <td>Premium Emulsion</td>
-          <td>Luxury Emulsion</td>
-        </tr>
-
-        <tr>
-          <th>Electrical</th>
-          <td>Basic Wiring</td>
-          <td>Concealed Wiring</td>
-          <td>Premium + Automation</td>
-        </tr>
-
-        <tr>
-          <th>Plumbing</th>
-          <td>Normal Brand</td>
-          <td>Astral / Supreme</td>
-          <td>Astral / Supreme</td>
-        </tr>
-
-        <tr>
-          <th>Warranty</th>
-          <td>5 Years</td>
-          <td>5 Years</td>
-          <td>5 Years</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="note">
-    * T&C Apply. Rates may vary based on built-up area and number of floors.
-  </div>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>DELUXE</th>
+                    <th>PREMIUM</th>
+                    <th>LUXURY</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Price per Sqft</th>
+                    <td class="price">₹1550 / Sqft</td>
+                    <td class="price">₹1910 / Sqft</td>
+                    <td class="price">₹2370 / Sqft</td>
+                </tr>
+                <tr>
+                    <th>Architectural Services</th>
+                    <td><i class="fa fa-check check"></i></td>
+                    <td><i class="fa fa-check check"></i></td>
+                    <td><i class="fa fa-check check"></i></td>
+                </tr>
+                <tr>
+                    <th>Govt / Bank Assistance</th>
+                    <td>Extra Charge</td>
+                    <td>Extra Charge</td>
+                    <td><i class="fa fa-check check"></i></td>
+                </tr>
+                <tr>
+                    <th>Cement</th>
+                    <td>Ultratech / Dalmia</td>
+                    <td>Ultratech / Dalmia</td>
+                    <td>Ultratech / Ambuja</td>
+                </tr>
+                <tr>
+                    <th>Steel</th>
+                    <td>Standard Brand</td>
+                    <td>X-Tech / Maithan</td>
+                    <td>TATA / JSW</td>
+                </tr>
+                <tr>
+                    <th>Bricks</th>
+                    <td>Red Brick</td>
+                    <td>Red Brick</td>
+                    <td>Red Brick / AAC Block</td>
+                </tr>
+                <tr>
+                    <th>Floor Tiles</th>
+                    <td>Up to ₹45 / Sqft</td>
+                    <td>Up to ₹60 / Sqft</td>
+                    <td>Up to ₹110 / Sqft</td>
+                </tr>
+                <tr>
+                    <th>Painting</th>
+                    <td>Standard Emulsion</td>
+                    <td>Premium Emulsion</td>
+                    <td>Luxury Emulsion</td>
+                </tr>
+                <tr>
+                    <th>Electrical</th>
+                    <td>Basic Wiring</td>
+                    <td>Concealed Wiring</td>
+                    <td>Premium + Automation</td>
+                </tr>
+                <tr>
+                    <th>Plumbing</th>
+                    <td>Normal Brand</td>
+                    <td>Astral / Supreme</td>
+                    <td>Astral / Supreme</td>
+                </tr>
+                <tr>
+                    <th>Warranty</th>
+                    <td>5 Years</td>
+                    <td>5 Years</td>
+                    <td>5 Years</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="note">
+        * T&C Apply. Rates may vary based on built-up area and number of floors.
+    </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <h3>About RPAA</h3>
-      <p>RPAA Construction & Engineering Works delivers reliable, modern and cost-effective construction solutions across residential, commercial and industrial projects.</p>
+<footer class="footer-final">
+    <div class="footer-about">
+        <h3>ABOUT US</h3>
+        <p>
+            RPAA Construction and Engineering Works is a trusted construction
+            company delivering quality construction, innovative engineering
+            solutions, and reliable renovation services. Our expertise spans
+            residential, commercial, and industrial projects with a strong
+            commitment to safety, durability, and timely delivery.
+        </p>
     </div>
-
-    <div>
-      <h3>Services</h3>
-      <p>Residential Construction</p>
-      <p>Commercial Construction</p>
-      <p>Industrial Projects</p>
-      <p>Interior & Exterior Works</p>
+    <div class="footer-columns">
+        <div class="footer-box">
+            <h4>QUICK LINKS</h4>
+            <ul>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="order.html">Order-Material</a></li>
+            </ul>
+        </div>
+        <div class="footer-box">
+            <h4>OUR SERVICES</h4>
+            <ul>
+                <li><a href="#">Residential Construction</a></li>
+                <li><a href="#">Commercial Construction</a></li>
+                <li><a href="#">Industrial Construction</a></li>
+                <li><a href="#">Interior & Exterior Work</a></li>
+                <li><a href="#">Testing Services</a></li>
+            </ul>
+        </div>
+        <div class="footer-box">
+            <h4>CONTACT INFO</h4>
+            <p>
+                📍 South Salmara,<br>
+                South Salmara Mankachar,<br>
+                Assam – 783127, India
+            </p>
+            <p>📞 +91 98649 42445</p>
+            <p>✉️ info@rpaaconstruction.com</p>
+            <div class="footer-social">
+                <a href="#">F</a>
+                <a href="#">X</a>
+                <a href="#">in</a>
+                <a href="#">IG</a>
+            </div>
+        </div>
     </div>
-
-    <div>
-      <h3>Contact</h3>
-      <p>South Salmara, Assam – 783127</p>
-      <p>📞 +91 98649 42445</p>
-      <p>✉ info@rpaaconstruction.com</p>
-      <div class="social">
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-linkedin"></i>
-        <i class="fab fa-instagram"></i>
-      </div>
+    <div class="footer-location">
+        <h4>OUR LOCATION</h4>
+        <iframe
+            src="https://www.google.com/maps?q=South+Salmara+Assam&output=embed"
+            loading="lazy"
+            allowfullscreen>
+        </iframe>
     </div>
-  </div>
+    <div class="footer-bottom">
+        © 2025 RPAA Construction and Engineering Works. All rights reserved.
+    </div>
 </footer>
 
+<script>
+// Mobile Menu Toggle
+function toggleMenu() {
+    const nav = document.getElementById("nav-menu");
+    nav.classList.toggle("active");
+}
+</script>
 </body>
 </html>
