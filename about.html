@@ -1,132 +1,736 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>RPAA Construction & Engineering Works</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - RPAA Construction & Engineering Works</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-        /* NAVBAR */
-        header {
-            width: 100%;
-            background: #ffffff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-        }
+body {
+    background: #fff;
+    color: #333;
+    overflow-x: hidden;
+}
 
-        .logo {
-            font-size: 18px;
-            font-weight: bold;
-            color: #ffb300;
-        }
+/* ================= HEADER ================= */
+header {
+    background: linear-gradient(to right, #e8f8ff, #f6fdff);
+    padding: 12px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
 
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: #000;
-            font-weight: 500;
-        }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #7a0000;
+}
 
-        nav a:hover {
-            color: #ffb300;
-        }
+.logo img {
+    height: 40px;
+}
 
-        /* HERO SECTION */
-        .hero {
-            height: 90vh;
-            background:
-                linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                url("images/company-home.png");
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+nav {
+    display: flex;
+    gap: 8px;
+}
 
-        .hero-content {
-            color: #ffffff;
-            max-width: 850px;
-            padding: 20px;
-        }
+nav a {
+    text-decoration: none;
+    padding: 8px 14px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #7a0000;
+    border-radius: 6px;
+    transition: 0.3s;
+}
 
-        .hero-content h1 {
-            font-size: 50px;
-            margin-bottom: 20px;
-        }
+nav a:hover,
+nav a.active {
+    background: #7a0000;
+    color: #fff;
+}
 
-        .hero-content p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #7a0000;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 15px 35px;
-            background: #ffb300;
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-        }
+/* ================= HERO ================= */
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f3f4a, #0b5f6f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
 
-        .btn:hover {
-            background: #e6a100;
-        }
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("images/about/about.png") no-repeat center;
+    background-size: cover;
+    opacity: 0.3;
+}
 
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-            }
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+}
 
-            nav {
-                margin-top: 10px;
-            }
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease;
+}
 
-            .hero-content h1 {
-                font-size: 36px;
-            }
-        }
-    </style>
+.hero-content p {
+    font-size: 20px;
+    animation: fadeInUp 1.2s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= ABOUT SECTION ================= */
+.about-section {
+    padding: 80px 10%;
+    background: #ffffff;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.about-title {
+    font-size: 34px;
+    color: #0f3f4a;
+    margin-bottom: 18px;
+}
+
+.about-text {
+    font-size: 15.5px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* ================= VALUES ================= */
+.values {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.value-box {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.value-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.value-box i {
+    font-size: 28px;
+    color: #facc15;
+    margin-bottom: 12px;
+}
+
+.value-box h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #0f3f4a;
+}
+
+.value-box p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* ================= DIRECTOR SECTION ================= */
+.director-section {
+    padding: 80px 10%;
+    background: #f8fafc;
+}
+
+.director-card {
+    max-width: 1200px;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 40px;
+    align-items: center;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+.director-image img {
+    width: 100%;
+    border-radius: 18px;
+    object-fit: cover;
+}
+
+.director-content h2 {
+    font-size: 32px;
+    color: #1f2d3d;
+    margin-bottom: 6px;
+}
+
+.director-content h4 {
+    font-size: 16px;
+    color: #0f6b7b;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.director-content p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.cv-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 26px;
+    background: linear-gradient(135deg, #6f42c1, #845ec2);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 14.5px;
+    font-weight: 600;
+    transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(111, 66, 193, 0.35);
+}
+
+.cv-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(111, 66, 193, 0.45);
+}
+
+/* ================= LEADERSHIP TEAM ================= */
+.team-section {
+    padding: 80px 10%;
+    background: #ffffff;
+    text-align: center;
+}
+
+.team-title {
+    font-size: 34px;
+    color: #1f2d3d;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.team-title::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: #38bdf8;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.team-card {
+    background: #ffffff;
+    border: 2px solid #b6ecf8;
+    border-radius: 18px;
+    padding: 30px 22px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transition: 0.35s;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.team-card img {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 4px solid #38bdf8;
+}
+
+.team-card h3 {
+    font-size: 20px;
+    color: #0f3f4a;
+    margin-bottom: 6px;
+}
+
+.team-card .role {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.team-card p {
+    font-size: 14.5px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 6px;
+}
+
+/* ================= FOOTER ================= */
+.footer-final {
+    background: linear-gradient(135deg, #0f3f4a, #0b5f6f);
+    color: #fff;
+}
+
+.footer-about {
+    padding: 45px 10% 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-about h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-about h3::after {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background: #facc15;
+    display: block;
+    margin-top: 6px;
+}
+
+.footer-about p {
+    max-width: 900px;
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: #e6f2f4;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding: 40px 10%;
+}
+
+.footer-box h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.footer-box h4::after {
+    content: "";
+    width: 34px;
+    height: 2px;
+    background: #facc15;
+    display: block;
+    margin-top: 6px;
+}
+
+.footer-box ul {
+    list-style: none;
+}
+
+.footer-box ul li {
+    margin-bottom: 9px;
+}
+
+.footer-box ul li a {
+    color: #fff4a3;
+    text-decoration: none;
+    font-size: 14.5px;
+    transition: 0.3s;
+}
+
+.footer-box ul li a:hover {
+    color: #facc15;
+}
+
+.footer-box p {
+    font-size: 14.5px;
+    line-height: 1.6;
+}
+
+.footer-location {
+    padding: 30px 10% 45px;
+    background: linear-gradient(180deg, #0b1f2a, #020617);
+}
+
+.footer-location h4 {
+    font-size: 15.5px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.footer-location iframe {
+    width: 100%;
+    height: 240px;
+    border-radius: 10px;
+    border: none;
+}
+
+.footer-bottom {
+    background: #020617;
+    text-align: center;
+    padding: 12px;
+    font-size: 13.5px;
+    color: #cbd5e1;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    header {
+        padding: 12px 20px;
+    }
+
+    .logo {
+        font-size: 14px;
+    }
+
+    .logo img {
+        height: 35px;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #e8f8ff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 12px 20px;
+        border-bottom: 1px solid rgba(122, 0, 0, 0.1);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero {
+        height: 60vh;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .about-section {
+        padding: 50px 5%;
+    }
+
+    .about-title {
+        font-size: 28px;
+    }
+
+    .director-section {
+        padding: 50px 5%;
+    }
+
+    .director-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .director-content h2 {
+        font-size: 26px;
+    }
+
+    .director-image img {
+        max-width: 260px;
+        margin: auto;
+    }
+
+    .team-section {
+        padding: 50px 5%;
+    }
+
+    .team-title {
+        font-size: 26px;
+    }
+
+    .footer-columns {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px 5%;
+    }
+
+    .footer-about {
+        padding: 35px 5% 25px;
+    }
+
+    .footer-location {
+        padding: 25px 5% 35px;
+    }
+
+    .values {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .team-card {
+        padding: 25px 18px;
+    }
+
+    .team-card img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .cv-btn {
+        padding: 10px 20px;
+        font-size: 13.5px;
+    }
+
+    .hero-content h1 {
+        font-size: 26px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo {
+        font-size: 12px;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    .about-title,
+    .team-title {
+        font-size: 24px;
+    }
+
+    .director-content h2 {
+        font-size: 22px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="logo">RPAA Construction & Engineering Works</div>
-        <nav>
-            <a href="#">HOME</a>
-            <a href="#">ABOUT</a>
-            <a href="#">PRICING</a>
-            <a href="#">SERVICES</a>
-            <a href="#">PROJECTS</a>
-            <a href="#">CONTACT</a>
-        </nav>
-    </header>
+<header>
+    <div class="logo">
+        <img src="images/logo-banner.png" alt="RPAA Construction Logo">
+        RPAA Construction & Engineering Works
+    </div>
+    <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="order.html">Order-Material</a>
+        <a href="pricing.html">₹ Pricing</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Building Dreams Into Reality</h1>
-            <p>
-                RPAA Construction and Engineering Works delivers modern civil engineering
-                and construction solutions with excellence and reliability.
-            </p>
-            <a href="#" class="btn">VIEW OUR PROJECTS</a>
+<section class="hero">
+    <div class="hero-content">
+        <h1>About RPAA Construction and Engineering Work</h1>
+        <p>Building Excellence, Engineering Trust</p>
+    </div>
+</section>
+
+<section class="director-section">
+    <div class="director-card">
+        <div class="director-image">
+            <img src="images/about/md.jpg" alt="Akhirul Islam - Managing Director">
         </div>
-    </section>
+
+        <div class="director-content">
+            <h2>Akhirul Islam</h2>
+            <h4>Managing Director (MD) & Founder</h4>
+
+            <p>
+                RPAA Construction and Engineering Works is led by Akhirul Islam,
+                a dedicated professional with a strong vision for quality-driven
+                construction and sustainable infrastructure development.
+            </p>
+
+            <p>
+                Under his leadership, the company has successfully delivered
+                residential, commercial, and industrial projects with a strong
+                emphasis on engineering excellence, safety standards, and timely
+                execution.
+            </p>
+
+            <a href="#" class="cv-btn">Download Profile</a>
+        </div>
+    </div>
+</section>
+
+<section class="team-section">
+    <h2 class="team-title">Our Leadership Team</h2>
+
+    <div class="team-grid">
+        <div class="team-card">
+            <img src="images/about/rakibul.jpg" alt="RAKIBUL ISLAM">
+            <h3>RAKIBUL ISLAM</h3>
+            <p class="role">Chief Executive Officer (CEO)</p>
+            <p>Civil Engineer</p>
+            <p><strong>Contact:</strong> 9864942445</p>
+        </div>
+
+        <div class="team-card">
+            <img src="images/about/anjagra.jpg" alt="ANJAGRA ISWARY">
+            <h3>ANJAGRA ISWARY</h3>
+            <p class="role">Project Manager & Chief Operating Officer (COO)</p>
+            <p>B.Com & Civil Engineer</p>
+        </div>
+
+        <div class="team-card">
+            <img src="images/about/pornesh.jpg" alt="PRONESH HOJAI">
+            <h3>PRONESH HOJAI</h3>
+            <p class="role">Chief Financial Officer (CFO)</p>
+            <p>Civil Engineer</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-final">
+    <div class="footer-about">
+        <h3>ABOUT US</h3>
+        <p>
+            RPAA Construction and Engineering Works is a trusted construction company
+            delivering quality construction, innovative engineering solutions, and
+            reliable renovation services.
+        </p>
+    </div>
+
+    <div class="footer-columns">
+        <div class="footer-box">
+            <h4>QUICK LINKS</h4>
+            <ul>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-box">
+            <h4>OUR SERVICES</h4>
+            <ul>
+                <li><a href="services.html">Residential Construction</a></li>
+                <li><a href="services.html">Commercial Construction</a></li>
+                <li><a href="services.html">Interior & Exterior Work</a></li>
+                <li><a href="services.html">Testing Services</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-box">
+            <h4>CONTACT INFO</h4>
+            <p>📍 South Salmara, Assam – 783127</p>
+            <p>📞 +91 98649 42445</p>
+            <p>✉️ info@rpaaconstruction.com</p>
+        </div>
+    </div>
+
+    <div class="footer-location">
+        <h4>OUR LOCATION</h4>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57287.5!2d89.8!3d25.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDU0JzAwLjAiTiA4OcKwNDgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+            loading="lazy"
+            allowfullscreen
+            title="RPAA Construction Location">
+        </iframe>
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 RPAA Construction and Engineering Works. All rights reserved.
+    </div>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("active");
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const nav = document.getElementById("nav-menu");
+    const toggle = document.querySelector(".menu-toggle");
+    
+    if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+        nav.classList.remove("active");
+    }
+});
+</script>
 
 </body>
 </html>
