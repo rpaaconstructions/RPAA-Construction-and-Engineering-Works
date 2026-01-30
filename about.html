@@ -11,13 +11,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background: #fff;
     color: #333;
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
 /* ================= HEADER ================= */
@@ -44,6 +45,7 @@ header {
 
 .logo img {
     height: 40px;
+    width: auto;
 }
 
 nav {
@@ -58,7 +60,7 @@ nav a {
     font-weight: 600;
     color: #7a0000;
     border-radius: 6px;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 nav a:hover,
@@ -72,12 +74,16 @@ nav a.active {
     font-size: 26px;
     cursor: pointer;
     color: #7a0000;
+    background: none;
+    border: none;
+    padding: 5px;
 }
 
 /* ================= HERO ================= */
 .hero {
     width: 100%;
     height: 100vh;
+    min-height: 500px;
     background: linear-gradient(135deg, #0f3f4a, #0b5f6f);
     display: flex;
     align-items: center;
@@ -85,6 +91,7 @@ nav a.active {
     color: #fff;
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
 .hero::before {
@@ -107,13 +114,13 @@ nav a.active {
 }
 
 .hero-content h1 {
-    font-size: 48px;
+    font-size: clamp(28px, 6vw, 48px);
     margin-bottom: 20px;
     animation: fadeInUp 1s ease;
 }
 
 .hero-content p {
-    font-size: 20px;
+    font-size: clamp(16px, 3vw, 20px);
     animation: fadeInUp 1.2s ease;
 }
 
@@ -128,78 +135,20 @@ nav a.active {
     }
 }
 
-/* ================= ABOUT SECTION ================= */
-.about-section {
-    padding: 80px 10%;
-    background: #ffffff;
-}
-
-.about-container {
-    max-width: 1100px;
-    margin: auto;
-}
-
-.about-title {
-    font-size: 34px;
-    color: #0f3f4a;
-    margin-bottom: 18px;
-}
-
-.about-text {
-    font-size: 15.5px;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 25px;
-}
-
-/* ================= VALUES ================= */
-.values {
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 30px;
-}
-
-.value-box {
-    background: #f8fafc;
-    border-radius: 16px;
-    padding: 28px;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-    transition: 0.3s;
-}
-
-.value-box:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-}
-
-.value-box i {
-    font-size: 28px;
-    color: #facc15;
-    margin-bottom: 12px;
-}
-
-.value-box h4 {
-    font-size: 18px;
-    margin-bottom: 8px;
-    color: #0f3f4a;
-}
-
-.value-box p {
-    font-size: 14.5px;
-    line-height: 1.6;
-    color: #555;
-}
-
 /* ================= DIRECTOR SECTION ================= */
 .director-section {
     padding: 80px 10%;
     background: #f8fafc;
 }
 
+.about-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 .director-card {
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto 50px;
     background: #ffffff;
     border-radius: 20px;
     padding: 40px;
@@ -208,12 +157,28 @@ nav a.active {
     gap: 40px;
     align-items: center;
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.director-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.12);
+}
+
+.director-card:last-child {
+    margin-bottom: 0;
+}
+
+.director-image {
+    width: 100%;
 }
 
 .director-image img {
     width: 100%;
+    height: auto;
     border-radius: 18px;
     object-fit: cover;
+    display: block;
 }
 
 .director-content h2 {
@@ -246,86 +211,13 @@ nav a.active {
     border-radius: 50px;
     font-size: 14.5px;
     font-weight: 600;
-    transition: 0.3s;
+    transition: all 0.3s ease;
     box-shadow: 0 10px 25px rgba(111, 66, 193, 0.35);
 }
 
 .cv-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 15px 35px rgba(111, 66, 193, 0.45);
-}
-
-/* ================= LEADERSHIP TEAM ================= */
-.team-section {
-    padding: 80px 10%;
-    background: #ffffff;
-    text-align: center;
-}
-
-.team-title {
-    font-size: 34px;
-    color: #1f2d3d;
-    margin-bottom: 50px;
-    position: relative;
-}
-
-.team-title::after {
-    content: "";
-    width: 60px;
-    height: 3px;
-    background: #38bdf8;
-    display: block;
-    margin: 10px auto 0;
-    border-radius: 2px;
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-}
-
-.team-card {
-    background: #ffffff;
-    border: 2px solid #b6ecf8;
-    border-radius: 18px;
-    padding: 30px 22px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    transition: 0.35s;
-}
-
-.team-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-}
-
-.team-card img {
-    width: 170px;
-    height: 170px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    border: 4px solid #38bdf8;
-}
-
-.team-card h3 {
-    font-size: 20px;
-    color: #0f3f4a;
-    margin-bottom: 6px;
-}
-
-.team-card .role {
-    font-size: 14.5px;
-    font-weight: 600;
-    color: #2563eb;
-    margin-bottom: 10px;
-}
-
-.team-card p {
-    font-size: 14.5px;
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: 6px;
 }
 
 /* ================= FOOTER ================= */
@@ -342,6 +234,8 @@ nav a.active {
 .footer-about h3 {
     font-size: 18px;
     margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
 }
 
 .footer-about h3::after {
@@ -370,6 +264,8 @@ nav a.active {
 .footer-box h4 {
     font-size: 16px;
     margin-bottom: 12px;
+    position: relative;
+    display: inline-block;
 }
 
 .footer-box h4::after {
@@ -393,7 +289,7 @@ nav a.active {
     color: #fff4a3;
     text-decoration: none;
     font-size: 14.5px;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
 .footer-box ul li a:hover {
@@ -403,6 +299,7 @@ nav a.active {
 .footer-box p {
     font-size: 14.5px;
     line-height: 1.6;
+    margin-bottom: 8px;
 }
 
 .footer-location {
@@ -412,7 +309,7 @@ nav a.active {
 
 .footer-location h4 {
     font-size: 15.5px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-weight: 600;
 }
 
@@ -426,17 +323,35 @@ nav a.active {
 .footer-bottom {
     background: #020617;
     text-align: center;
-    padding: 12px;
+    padding: 20px 12px;
     font-size: 13.5px;
     color: #cbd5e1;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 900px) {
+/* ================= TABLET RESPONSIVE ================= */
+@media (max-width: 1024px) {
     header {
         padding: 12px 20px;
     }
 
+    .director-section {
+        padding: 60px 5%;
+    }
+
+    .director-card {
+        grid-template-columns: 280px 1fr;
+        gap: 30px;
+        padding: 35px;
+    }
+
+    .footer-columns {
+        gap: 40px;
+        padding: 35px 5%;
+    }
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 900px) {
     .logo {
         font-size: 14px;
     }
@@ -463,6 +378,7 @@ nav a.active {
     nav a {
         padding: 12px 20px;
         border-bottom: 1px solid rgba(122, 0, 0, 0.1);
+        font-size: 16px;
     }
 
     .menu-toggle {
@@ -471,22 +387,7 @@ nav a.active {
 
     .hero {
         height: 60vh;
-    }
-
-    .hero-content h1 {
-        font-size: 32px;
-    }
-
-    .hero-content p {
-        font-size: 16px;
-    }
-
-    .about-section {
-        padding: 50px 5%;
-    }
-
-    .about-title {
-        font-size: 28px;
+        min-height: 400px;
     }
 
     .director-section {
@@ -497,23 +398,20 @@ nav a.active {
         grid-template-columns: 1fr;
         text-align: center;
         padding: 30px 20px;
+        margin-bottom: 30px;
     }
 
     .director-content h2 {
         font-size: 26px;
     }
 
+    .director-content h4 {
+        font-size: 15px;
+    }
+
     .director-image img {
         max-width: 260px;
-        margin: auto;
-    }
-
-    .team-section {
-        padding: 50px 5%;
-    }
-
-    .team-title {
-        font-size: 26px;
+        margin: 0 auto;
     }
 
     .footer-columns {
@@ -530,19 +428,36 @@ nav a.active {
         padding: 25px 5% 35px;
     }
 
-    .values {
-        grid-template-columns: 1fr;
+    .footer-location iframe {
+        height: 200px;
     }
 }
 
+/* ================= SMALL MOBILE ================= */
 @media (max-width: 600px) {
-    .team-card {
-        padding: 25px 18px;
+    header {
+        padding: 10px 15px;
     }
 
-    .team-card img {
-        width: 140px;
-        height: 140px;
+    .hero {
+        min-height: 350px;
+    }
+
+    .director-card {
+        padding: 25px 15px;
+        margin-bottom: 25px;
+    }
+
+    .director-content h2 {
+        font-size: 22px;
+    }
+
+    .director-content h4 {
+        font-size: 14px;
+    }
+
+    .director-content p {
+        font-size: 14px;
     }
 
     .cv-btn {
@@ -550,15 +465,27 @@ nav a.active {
         font-size: 13.5px;
     }
 
-    .hero-content h1 {
-        font-size: 26px;
+    .director-image img {
+        max-width: 220px;
     }
 
-    .hero-content p {
-        font-size: 14px;
+    .footer-about h3,
+    .footer-box h4 {
+        font-size: 16px;
+    }
+
+    .footer-about p,
+    .footer-box p,
+    .footer-box ul li a {
+        font-size: 13.5px;
+    }
+
+    .footer-location iframe {
+        height: 180px;
     }
 }
 
+/* ================= EXTRA SMALL MOBILE ================= */
 @media (max-width: 400px) {
     .logo {
         font-size: 12px;
@@ -568,13 +495,42 @@ nav a.active {
         height: 30px;
     }
 
-    .about-title,
-    .team-title {
-        font-size: 24px;
+    .director-content h2 {
+        font-size: 20px;
     }
 
-    .director-content h2 {
-        font-size: 22px;
+    .director-content h4 {
+        font-size: 13px;
+    }
+
+    .director-image img {
+        max-width: 200px;
+    }
+
+    .footer-about,
+    .footer-columns,
+    .footer-location {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+}
+
+/* ================= PRINT STYLES ================= */
+@media print {
+    header,
+    .footer-final {
+        display: none;
+    }
+
+    .hero {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .director-card {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
     }
 }
 </style>
@@ -585,7 +541,7 @@ nav a.active {
 <header>
     <div class="logo">
         <img src="images/logo-banner.png" alt="RPAA Construction Logo">
-        RPAA Construction & Engineering Works
+        <span>RPAA Construction & Engineering Works</span>
     </div>
     <nav id="nav-menu">
         <a href="index.html">Home</a>
@@ -596,69 +552,111 @@ nav a.active {
         <a href="about.html" class="active">About Us</a>
         <a href="contact.html">Contact Us</a>
     </nav>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu">☰</button>
 </header>
 
 <section class="hero">
     <div class="hero-content">
-        <h1>About RPAA Construction and Engineering Work</h1>
+        <h1>About RPAA Construction and Engineering Works</h1>
         <p>Building Excellence, Engineering Trust</p>
     </div>
 </section>
 
+<!-- ================= LEADERSHIP SECTION ================= -->
 <section class="director-section">
-    <div class="director-card">
-        <div class="director-image">
-            <img src="images/about/md.jpg" alt="Akhirul Islam - Managing Director">
+    <div class="about-container">
+
+        <!-- MD -->
+        <div class="director-card">
+            <div class="director-image">
+                <img src="images/about/md.jpg" alt="Akhirul Islam - Managing Director">
+            </div>
+            <div class="director-content">
+                <h2>Akhirul Islam</h2>
+                <h4>Managing Director (MD) & Founder</h4>
+                <p>
+                    RPAA Construction and Engineering Works is led by Akhirul Islam,
+                    a dedicated professional with a strong vision for quality-driven
+                    construction and sustainable infrastructure development.
+                </p>
+                <p>
+                    Under his leadership, the company has delivered residential,
+                    commercial, and industrial projects with a strong emphasis on
+                    engineering excellence, safety, and timely execution.
+                </p>
+                <a href="profiles/akhirul-islam.pdf" class="cv-btn" target="_blank" rel="noopener noreferrer">
+                    Download Profile
+                </a>
+            </div>
         </div>
 
-        <div class="director-content">
-            <h2>Akhirul Islam</h2>
-            <h4>Managing Director (MD) & Founder</h4>
-
-            <p>
-                RPAA Construction and Engineering Works is led by Akhirul Islam,
-                a dedicated professional with a strong vision for quality-driven
-                construction and sustainable infrastructure development.
-            </p>
-
-            <p>
-                Under his leadership, the company has successfully delivered
-                residential, commercial, and industrial projects with a strong
-                emphasis on engineering excellence, safety standards, and timely
-                execution.
-            </p>
-
-            <a href="#" class="cv-btn">Download Profile</a>
-        </div>
-    </div>
-</section>
-
-<section class="team-section">
-    <h2 class="team-title">Our Leadership Team</h2>
-
-    <div class="team-grid">
-        <div class="team-card">
-            <img src="images/about/rakibul.jpg" alt="RAKIBUL ISLAM">
-            <h3>RAKIBUL ISLAM</h3>
-            <p class="role">Chief Executive Officer (CEO)</p>
-            <p>Civil Engineer</p>
-            <p><strong>Contact:</strong> 9864942445</p>
+        <!-- CEO -->
+        <div class="director-card">
+            <div class="director-image">
+                <img src="images/about/rakibul.jpg" alt="Rakibul Islam - CEO">
+            </div>
+            <div class="director-content">
+                <h2>Rakibul Islam</h2>
+                <h4>Chief Executive Officer (CEO)</h4>
+                <p>
+                    RPAA Construction and Engineering Works is guided by the strategic
+                    leadership of Rakibul Islam, bringing strong managerial expertise
+                    and a forward-thinking approach.
+                </p>
+                <p>
+                    He focuses on operational excellence, innovation, client
+                    satisfaction, and sustainable business growth.
+                </p>
+                <a href="profiles/rakibul-islam.pdf" class="cv-btn" target="_blank" rel="noopener noreferrer">
+                    Download Profile
+                </a>
+            </div>
         </div>
 
-        <div class="team-card">
-            <img src="images/about/anjagra.jpg" alt="ANJAGRA ISWARY">
-            <h3>ANJAGRA ISWARY</h3>
-            <p class="role">Project Manager & Chief Operating Officer (COO)</p>
-            <p>B.Com & Civil Engineer</p>
+        <!-- COO -->
+        <div class="director-card">
+            <div class="director-image">
+                <img src="images/about/anjagra.jpg" alt="Anjagra Iswary - COO">
+            </div>
+            <div class="director-content">
+                <h2>Anjagra Iswary</h2>
+                <h4>Project Manager & Chief Operating Officer (COO)</h4>
+                <p>
+                    As COO, Anjagra Iswary oversees daily operations and project
+                    coordination across all departments.
+                </p>
+                <p>
+                    He ensures smooth execution, quality control, teamwork, and
+                    strict adherence to safety and engineering standards.
+                </p>
+                <a href="profiles/anjagra-iswary.pdf" class="cv-btn" target="_blank" rel="noopener noreferrer">
+                    Download Profile
+                </a>
+            </div>
         </div>
 
-        <div class="team-card">
-            <img src="images/about/pornesh.jpg" alt="PRONESH HOJAI">
-            <h3>PRONESH HOJAI</h3>
-            <p class="role">Chief Financial Officer (CFO)</p>
-            <p>Civil Engineer</p>
+        <!-- CFO -->
+        <div class="director-card">
+            <div class="director-image">
+                <img src="images/about/pornesh.jpg" alt="Pronesh Hojai - CFO">
+            </div>
+            <div class="director-content">
+                <h2>Pronesh Hojai</h2>
+                <h4>Chief Financial Officer (CFO)</h4>
+                <p>
+                    Pronesh Hojai manages financial planning, budgeting, and financial
+                    governance at RPAA Construction and Engineering Works.
+                </p>
+                <p>
+                    His expertise ensures transparency, cost efficiency, and
+                    sustainable financial growth.
+                </p>
+                <a href="profiles/pronesh-hojai.pdf" class="cv-btn" target="_blank" rel="noopener noreferrer">
+                    Download Profile
+                </a>
+            </div>
         </div>
+
     </div>
 </section>
 
@@ -718,7 +716,8 @@ nav a.active {
 
 <script>
 function toggleMenu() {
-    document.getElementById("nav-menu").classList.toggle("active");
+    const navMenu = document.getElementById("nav-menu");
+    navMenu.classList.toggle("active");
 }
 
 // Close menu when clicking outside
@@ -726,10 +725,33 @@ document.addEventListener('click', function(event) {
     const nav = document.getElementById("nav-menu");
     const toggle = document.querySelector(".menu-toggle");
     
-    if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+    if (nav && toggle && !nav.contains(event.target) && !toggle.contains(event.target)) {
         nav.classList.remove("active");
     }
 });
+
+// Close menu when clicking on a link (mobile)
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function() {
+        const nav = document.getElementById("nav-menu");
+        if (nav && window.innerWidth <= 900) {
+            nav.classList.remove("active");
+        }
+    });
+});
+
+// Prevent scroll when mobile menu is open
+const menuToggle = document.querySelector('.menu-toggle');
+if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+        const nav = document.getElementById("nav-menu");
+        if (nav && nav.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+}
 </script>
 
 </body>
