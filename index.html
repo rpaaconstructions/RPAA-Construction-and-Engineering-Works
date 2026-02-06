@@ -416,6 +416,68 @@
     border-radius: 22px;
     box-shadow: 0 20px 45px rgba(0,0,0,0.25);
 }
+
+/* ===== TESTING SERVICES ===== */
+.testing-services{
+    padding:70px 10%;
+    background:#f8fafc;
+    text-align:center;
+}
+.testing-services h2{
+    font-size:34px;
+    color:#1f2d3d;
+    margin-bottom:8px;
+}
+.testing-subtitle{
+    font-size:16px;
+    color:#555;
+    margin-bottom:50px;
+}
+.testing-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+/* CARD */
+.testing-card{
+    background:#ffffff;
+    padding:28px 24px;
+    border-radius:14px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.08);
+    text-align:left;
+    transition:0.3s;
+}
+.testing-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 35px rgba(0,0,0,0.12);
+}
+.testing-card h3{
+    font-size:20px;
+    color:#003366;
+    margin-bottom:14px;
+    border-bottom:2px solid #7a0000;
+    display:inline-block;
+    padding-bottom:6px;
+}
+.testing-card ul{
+    list-style:none;
+    margin-top:10px;
+}
+.testing-card ul li{
+    font-size:14.5px;
+    color:#444;
+    margin-bottom:8px;
+    padding-left:16px;
+    position:relative;
+    line-height: 1.5;
+}
+.testing-card ul li::before{
+    content:"•";
+    position:absolute;
+    left:0;
+    color:#7a0000;
+    font-size: 18px;
+}
 /* BADGE */
 .badge {
     position: absolute;
@@ -1260,6 +1322,75 @@
     </div>
 </div>
 </section>
+
+<!-- PARTNER TESTING LAB: K TERRA GROUP -->
+<section class="testing-services">
+    <h2>Partner Testing Lab: K Terra Group</h2>
+    <p class="testing-subtitle">
+        We partner with K Terra Group for advanced civil material testing services. K Terra Group provides accurate, standard-compliant testing to support our construction projects.
+    </p>
+    <div class="testing-grid">
+        <div class="testing-card">
+            <h3>Soil Testing</h3>
+            <ul>
+                <li>Grain Size Analysis (Sieve Analysis)</li>
+                <li>Atterberg Limits (Liquid Limit, Plastic Limit)</li>
+                <li>Specific Gravity</li>
+                <li>Proctor Compaction Test</li>
+                <li>California Bearing Ratio (CBR)</li>
+                <li>Direct Shear Test</li>
+                <li>Triaxial Shear Test</li>
+            </ul>
+        </div>
+        <div class="testing-card">
+            <h3>Sand Testing</h3>
+            <ul>
+                <li>Sieve Analysis</li>
+                <li>Silt Content Test</li>
+                <li>Bulking of Sand</li>
+                <li>Specific Gravity</li>
+                <li>Moisture Content</li>
+                <li>Organic Impurities Test</li>
+            </ul>
+        </div>
+        <div class="testing-card">
+            <h3>Concrete Testing</h3>
+            <ul>
+                <li>Compressive Strength Test</li>
+                <li>Slump Test</li>
+                <li>Cube Testing</li>
+                <li>Flexural Strength</li>
+                <li>Water Absorption</li>
+                <li>Rebound Hammer Test</li>
+            </ul>
+        </div>
+        <div class="testing-card">
+            <h3>Aggregate Testing</h3>
+            <ul>
+                <li>Crushing Value Test</li>
+                <li>Impact Value Test</li>
+                <li>Abrasion Value (Los Angeles)</li>
+                <li>Flakiness and Elongation Index</li>
+                <li>Specific Gravity</li>
+                <li>Water Absorption</li>
+                <li>Soundness Test</li>
+            </ul>
+        </div>
+        <div class="testing-card">
+            <h3>Water Testing</h3>
+            <ul>
+                <li>pH Value</li>
+                <li>Hardness</li>
+                <li>Chloride Content</li>
+                <li>Sulphate Content</li>
+                <li>Alkalinity</li>
+                <li>Organic Matter</li>
+                <li>Turbidity</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
 <section class="vision-mission">
     <h2>Our Vision & Mission</h2>
     <p class="vm-subtitle">
